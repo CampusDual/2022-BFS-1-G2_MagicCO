@@ -1,11 +1,7 @@
-  <o-form show-header="no">
-    <o-combo #truefalsestring attr="combo" label="Select value" [static-data]="booleanArray" [data]="selectedBooleanCode"
-      value-column="booleanCode" columns="booleanCode;booleanValue" visible-columns="booleanValue" required="yes"
-      fxFlex (onChange) = "getValue()">
-
-    </o-combo>
-  </o-form>
-
+<o-combo #truefalsestring attr="MAGIC_STATUS" label="Select value" [static-data]="booleanArray"
+  value-column="MAGIC_STATUS" columns="MAGIC_STATUS" visible-columns="MAGIC_STATUS" required="yes"
+  fxFlex (onChange)="setValue()">
+</o-combo>
   <!-- <o-combo #truefalsestring label="Select value" [static-data]="booleanArray" [data]="selectedBooleanString"
   value-column="booleanString" columns="booleanString;booleanValue" visible-columns="booleanValue"
   required="yes" fxFlex>
