@@ -18,5 +18,20 @@
   "REMEMBER_ME": "Recuérdame",
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
-  "FOOTER_RIGHTS": "Todos los derechos reservados"
+  "FOOTER_RIGHTS": "Todos los derechos reservados",
+  "SERVICES": "Servicios",
+  "ID_SERVICE": "ID",
+  "ICON": "Logotipo",
+  "NAME": "Nombre de servicio",
+  "PRICE": "Precio",
+  "FIDELITY_POINTS": "Puntos de fidelidad",
+  "DURATION_TIME": "Duración, días",
+  "LEGALITY_STATUS": "Legality",
+  "MAGIC_STATUS": "Magical",
+  "EFFICIENCY_PERCENTAGE": "Eficiencia, %",
+  "SUCCESS_PERCENTAGE": "Éxito, %",
+  "BONUS": "Bonus",
+  "DESCRIPTION": "Descripción",
+  "EFFICIENCY_AS_PERCENTS": "Eficiencia, %",
+  "SUCCESS_AS_PERCENTS": "Éxito, %"
 }
