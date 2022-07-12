@@ -33,5 +33,7 @@
   "BONUS": "Bonus",
   "DESCRIPTION": "Descripción",
   "EFFICIENCY_AS_PERCENTS": "Eficiencia, %",
-  "SUCCESS_AS_PERCENTS": "Éxito, %"
+  "SUCCESS_AS_PERCENTS": "Éxito, %",
+  "YES": "Sí",
+  "NO": "No"
 }

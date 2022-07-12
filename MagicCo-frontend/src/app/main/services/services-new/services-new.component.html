@@ -3,7 +3,7 @@
     <o-row>
       <o-column fxFlex>
         <o-currency-input class="input-padding" attr="PRICE" fxFlex="80" required="yes" read-only="no" min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
-        <o-image class="input-padding" fxFlex="80" id="ICON" attr="ICON" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+        <o-image class="input-padding" fxFlex="80" id="ICON" attr="ICON" empty-image="assets/images/no-image.png"></o-image>
       </o-column>
       <o-column title-label="SERVICE_ADDITIONAL_INFORMATION" fxFlex>
         <o-integer-input attr="FIDELITY_POINTS" label="FIDELITY_POINTS" fxFlex="80" read-only="no" required="yes" min="0">
@@ -20,21 +20,21 @@
           value-column="booleanString" columns="booleanString;booleanValue" visible-columns="booleanValue"
           required="yes" fxFlex>
           <o-combo-renderer-boolean boolean-type="string" true-value="true" false-value="false"
-            render-true-value="true" render-false-value="false">
+          render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}">
           </o-combo-renderer-boolean>
         </o-combo>
         <o-combo attr="MAGIC_STATUS" [static-data]="booleanArray" [data]="selectedBooleanString"
           value-column="booleanString" columns="booleanString;booleanValue" visible-columns="booleanValue"
           required="yes" fxFlex>
           <o-combo-renderer-boolean boolean-type="string" true-value="true" false-value="false"
-            render-true-value="true" render-false-value="false">
+          render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}">
           </o-combo-renderer-boolean>
         </o-combo>
         <o-combo attr="BONUS" [static-data]="booleanArray" [data]="selectedBooleanString"
           value-column="booleanString" columns="booleanString;booleanValue" visible-columns="booleanValue"
           required="yes" fxFlex>
           <o-combo-renderer-boolean boolean-type="string" true-value="true" false-value="false"
-            render-true-value="true" render-false-value="false">
+          render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}">
           </o-combo-renderer-boolean>
         </o-combo>
       </o-column>
