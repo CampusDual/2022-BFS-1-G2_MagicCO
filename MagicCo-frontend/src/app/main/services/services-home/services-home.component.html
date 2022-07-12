@@ -1,0 +1,35 @@
+<o-form-layout-manager title="SERVICES" separator=" | " mode="tab" label-columns="NAME" >
+  <div fxFill>
+    <o-table fxFlex attr="servicesTable" service="services" entity="service" keys="ID_SERVICE"
+      columns="ID_SERVICE;NAME;ICON;PRICE;FIDELITY_POINTS;DURATION_TIME;LEGALITY_STATUS;MAGIC_STATUS;EFFICIENCY_PERCENTAGE;SUCCESS_PERCENTAGE;BONUS;DESCRIPTION"
+      visible-columns="NAME;ICON;PRICE;FIDELITY_POINTS;DURATION_TIME;LEGALITY_STATUS;MAGIC_STATUS;EFFICIENCY_AS_PERCENTS;SUCCESS_AS_PERCENTS;BONUS;DESCRIPTION"
+      query-rows="25" auto-adjust="false" title-align="center" show-buttons-text="true" virtual-scroll="no">
+      <o-table-column attr="NAME" title="{{'NAME' | oTranslate}}" content-align="left" multiline="yes" tooltip="{{NAME}}"></o-table-column>
+      <o-table-column attr="ICON" title="{{'ICON' | oTranslate}}" avatar="yes" orderable="no" searchable="no" width="32px" >
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+        </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="PRICE" title="{{'PRICE' | oTranslate}}"  type="currency" thousand-separator="." decimal-separator=","
+        currency-symbol="€" currency-symbol-position="right" title-align="center" content-align="center"></o-table-column>
+      <o-table-column attr="FIDELITY_POINTS" title="{{'FIDELITY_POINTS' | oTranslate}}" title-align="center" content-align="center"></o-table-column>
+      <o-table-column attr="DURATION_TIME" title="{{'DURATION_TIME' | oTranslate}}" title-align="center" content-align="center"></o-table-column>
+      <o-table-column-calculated attr="EFFICIENCY_AS_PERCENTS" title="{{'EFFICIENCY_AS_PERCENTS' | oTranslate}}" [operation-function]="showNumberAsPercents"
+        type="percentage" decimal-separator="," class="o-table-column-centered" >
+      </o-table-column-calculated>
+      <o-table-column-calculated attr="SUCCESS_AS_PERCENTS" title="{{'SUCCESS_AS_PERCENTS' | oTranslate}}" operation="(SUCCESS_PERCENTAGE/100)"
+        type="percentage" decimal-separator="," class="o-table-column-centered">
+      </o-table-column-calculated>
+      <o-table-column attr="DESCRIPTION" title="{{'DESCRIPTION' | oTranslate}}" content-align="left" multiline="yes"></o-table-column>
+      <o-table-column attr="LEGALITY_STATUS" title="{{'LEGALITY_STATUS' | oTranslate}}" type="boolean" true-value="check_circle"
+        boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
+      </o-table-column>
+      <o-table-column attr="MAGIC_STATUS" title="{{'MAGIC_STATUS' | oTranslate}}" type="boolean" true-value="check_circle"
+        boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
+      </o-table-column>
+      <o-table-column attr="BONUS" title="{{'BONUS' | oTranslate}}" type="boolean" true-value="check_circle"
+        boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
+      </o-table-column>
+    </o-table>
+  </div>
+</o-form-layout-manager>
+
