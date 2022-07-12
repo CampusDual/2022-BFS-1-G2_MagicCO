@@ -24,6 +24,12 @@ export const CONFIG: Config = {
   // or custom implementation) in the whole application.
   serviceType: 'OntimizeEE',
 
+  //Permissions
+  permissionsServiceType: 'OntimizeEEPermissions',
+  permissionsConfiguration: {
+    service: 'permissions'
+  },
+
   // Configuration parameters of application services.
   servicesConfiguration: SERVICE_CONFIG,
 
