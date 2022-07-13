@@ -35,5 +35,9 @@
   "EFFICIENCY_AS_PERCENTS" : "Efficiency, %",
   "SUCCESS_AS_PERCENTS" : "Success, %",
   "YES": "Yes",
-  "NO": "No"
+  "NO": "No",
+  "SETTINGS": "Settings",
+  "USERNAME": "Name",
+  "USERSURNAME": "Surname",
+  "USEREMAIL": "eMail"
 }
