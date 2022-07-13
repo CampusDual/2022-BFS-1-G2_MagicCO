@@ -1,0 +1,30 @@
+<div class="full-page">
+  <div class="register-outer-container">
+
+    <div class="wrapp-register">
+      <div fxFill fxLayout="column" fxLayoutAlign="center center" class="register-inner-container">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+          <mat-form-field style="width:100%;">
+            <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+          </mat-form-field>
+
+          <mat-form-field style="width:100%;">
+            <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit">{{ 'REGISTER' | oTranslate }}</button>
+        </form>
+      </div>
+
+    </div>
+
+  <div id="footer" class="footer-container">
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <span>{{ 'FOOTER_CREATED_BY' | oTranslate }}</span>
+      <span> &copy; 2021 </span>
+      <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
+    </div>
+  </div>
+
+</div>
