@@ -25,7 +25,7 @@
   "NAME": "Service name",
   "PRICE": "Service price",
   "FIDELITY_POINTS": "Fidelity points",
-  "DURATION_TIME": "Duration time",
+  "DURATION_TIME": "Duration (in days)",
   "LEGALITY_STATUS": "Legal status",
   "MAGIC_STATUS": "Magic Status",
   "EFFICIENCY_PERCENTAGE": "Efficiency, %",
