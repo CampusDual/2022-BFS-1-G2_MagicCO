@@ -18,5 +18,5 @@
 @include o-material-theme($theme, $default-typography);
 
 // Propagate theme to screen styles definition.
-@import '../../app/login/login.theme.scss';
+@import '../../app/landing-page/login/login.theme.scss';
 @include login-theme($theme);
