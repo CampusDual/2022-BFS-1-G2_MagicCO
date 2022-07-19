@@ -29,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.navigation.setVisible(false);
+    this.navigation.setVisible(true);
   }
 
   getStaticData() {
@@ -40,6 +40,6 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['./login']);
   }
 
-  
+
 
 }

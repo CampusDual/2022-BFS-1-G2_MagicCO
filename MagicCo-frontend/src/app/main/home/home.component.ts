@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   navigate() {
+    //todo: check the routing path below
     this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }
 
