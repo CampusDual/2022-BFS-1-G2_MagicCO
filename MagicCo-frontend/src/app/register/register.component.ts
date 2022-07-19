@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, Observable } from 'ontimize-web-ngx';
+import { AuthService, Observable, OValueChangeEvent } from 'ontimize-web-ngx';
 import { RegisterService } from './register.service';
 import { User } from './user';
 
@@ -18,31 +18,48 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private registerService: RegisterService) { }
+  constructor() { }
 
   ngOnInit() {
-    const userCtrl: FormControl = new FormControl('', Validators.required);
-    const pwdCtrl: FormControl = new FormControl('', Validators.required);
 
-    this.registerForm = new FormGroup({});
-    this.registerForm.addControl('username', userCtrl);
-    this.registerForm.addControl('password', pwdCtrl);
   }
 
+  confirmPassword(value){
+    alert(value);
+  }
+
+  onValueChange(event: OValueChangeEvent) {
+    var password = document.getElementById("password").innerHTML;
+    console.log(document.getElementById("password").innerHTML);
+    //var cpassword = (document.getElementById("cpassword") as HTMLInputElement).value;
+    alert(password);
+    //alert(cpassword);
+    if((<HTMLInputElement>document.getElementById("password")).value != (<HTMLInputElement>document.getElementById("cpassword")).value){
+
+      document.getElementById("errormessage").style.visibility="visible";
+      document.getElementById("buttonregister").disabled="true";
+
+    }else{
+      document.getElementById("buttonregister").disabled="false";
+    }
+
+    /*if (!this.printOnValueChange.checked) {
+      return;
+    }
+    const eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onValueChange';
+    eventChange.newValue = event.newValue;
+    eventChange.oldValue = event.oldValue;
+    eventChange.type = event.isProgrammaticChange() ? 'PROGRAMMATIC' : 'USER';
+    eventChange.attr = event.target.oattr;
+
+    this.consoleLog.unshift(eventChange);*/
+    //alert(event.newValue);
+  }
 
   register(){
-    const userName = this.registerForm.value['username'];
-    const password = this.registerForm.value['password'];
-
-
-    if (password == password){
-      this.registerService.createUserAccount(userName, password)
-      .subscribe();
-
+    alert("Entra");
   }
-
-  }
-
 
 }
 

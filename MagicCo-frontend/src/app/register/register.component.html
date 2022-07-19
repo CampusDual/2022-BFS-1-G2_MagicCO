@@ -3,28 +3,25 @@
 
     <div class="wrapp-register">
       <div fxFill fxLayout="column" fxLayoutAlign="center center" class="register-inner-container">
-        <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <o-form [formGroup]="registerForm" service="users" entity="user" keys="user_" header-actions="I" show-header="no">
 
-          <mat-form-field style="width:100%;">
-            <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
-          </mat-form-field>
-
-          <mat-form-field style="width:100%;">
-            <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
-          </mat-form-field>
-
-          <button mat-raised-button color="primary" type="submit">{{ 'REGISTER' | oTranslate }}</button>
-        </form>
+          <o-text-input attr="username" label="{{ 'USERNAME' | oTranslate }}" required="yes"></o-text-input>
+          <o-email-input attr="email" label="Email" read-only="no" required="yes" ></o-email-input>
+          <o-password-input id="password" attr="password" label="{{ 'PASSWORD' | oTranslate }}" read-only="no" required="yes" (onValueChange)="onValueChange($event)"></o-password-input>
+          <o-password-input id="cpassword" attr="cpassword" label="{{ 'REPEAT_PASSWORD' | oTranslate }}" read-only="no" required="yes" (onValueChange)="onValueChange($event)"></o-password-input>
+          <div><p id="errormessage" visible="false">Las contraseñas no coinciden</p></div>
+          <o-button id="buttonregister" label="{{ 'REGISTER' | oTranslate }}" (click)="register()" layout-padding color="primary"></o-button>
+        </o-form>
       </div>
-
     </div>
 
-  <div id="footer" class="footer-container">
-    <div fxLayout="row" fxLayoutAlign="end center">
-      <span>{{ 'FOOTER_CREATED_BY' | oTranslate }}</span>
-      <span> &copy; 2021 </span>
-      <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
+    <div id="footer" class="footer-container">
+      <div fxLayout="row" fxLayoutAlign="end center">
+        <span>{{ 'FOOTER_CREATED_BY' | oTranslate }}</span>
+        <span> &copy; 2021 </span>
+        <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
+      </div>
     </div>
+
   </div>
-
 </div>
