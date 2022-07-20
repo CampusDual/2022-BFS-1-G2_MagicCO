@@ -27,9 +27,4 @@ export class ServicesNewComponent implements OnInit {
 
   public selectedBooleanString = 'true';
 
-  // getValue() {
-  //   console.log(this.booleanCombo);
-  // }
-
-
 }

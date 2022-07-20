@@ -4,7 +4,7 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 
 export function showNumberAsPercentsFunction (rowData: Array<any>): number {
-  return rowData['EFFICIENCY_PERCENTAGE']/100;
+  return rowData['efficiency_percentage']/100;
 }
 
 @NgModule({
