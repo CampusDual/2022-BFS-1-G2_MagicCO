@@ -6,16 +6,20 @@ import { LandingServicesComponent } from './landing-services/landing-services.co
 import { LandingPageComponent } from './landing-page.component';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../shared/shared.module';
+import { PageFooterComponent } from './page-footer/page-footer.component';
+
 
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    LandingPageRoutingModule
+    LandingPageRoutingModule,
   ],
   declarations: [
-    LandingPageComponent
+    LandingPageComponent,
+    LandingServicesComponent,
+    PageFooterComponent
   ]
 })
 export class LandingPageModule { }

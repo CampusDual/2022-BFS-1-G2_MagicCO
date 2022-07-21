@@ -1,7 +1,7 @@
 {
   "APP_TITLE": "Quickstart",
   "VERSION": "Version",
-  "EXAMPLE_LOGIN_INFO": "Use this user and password for login",
+  "EXAMPLE_LOGIN_INFO": "Enter the username and password for login",
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "LOGIN": "Login",
@@ -17,6 +17,7 @@
   "ERROR_USER_PASS_INCORRECT": "Invalid username or password",
   "REMEMBER_ME": "Remember me",
   "FORGOT_PWD": "Forgot your password?",
-  "FOOTER_CREATED_BY": "Created by Imatia Innovation",
-  "FOOTER_RIGHTS": "All rights reserved"
+  "FOOTER_CREATED_BY": "Created by Magic & Co., Inc.",
+  "FOOTER_RIGHTS": "All rights reserved",
+  "LOGIN_REGISTER": "Login / Register"
 }

@@ -4,7 +4,9 @@
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss';
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+
+//@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+@import 'custom-theme.scss';
 
 // Include ontimize theme
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
@@ -20,3 +22,7 @@
 // Propagate theme to screen styles definition.
 @import '../../app/landing-page/login/login.theme.scss';
 @include login-theme($theme);
+
+// Propagate theme to screen styles definition.
+@import '../../app/landing-page/landing-page.theme.scss';
+@include landing-page-theme($theme);

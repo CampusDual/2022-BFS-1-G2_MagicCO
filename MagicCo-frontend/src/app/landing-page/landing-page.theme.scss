@@ -1,29 +1,25 @@
 @import 'node_modules/@angular/material/theming';
-@mixin login-theme($theme) {
+@mixin landing-page-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  .login-outer-container {
+  .landing-page-outer-container {
     background-color: mat-color($background, background);
 
-    .wrapp-login {
+    .wrapp-landing-page {
       background-color: mat-color($background, dialog);
 
-      .login-inner-container {
+      .landing-page-inner-container {
         background-color: mat-color($background, dialog);
 
         .logo-container {
           background-color: mat-color($background, dialog);
         }
 
-        .session-expired {
-          color: #f44336;
-        }
-
-        .login_info,
+        .landing-page_info,
         .title_text {
           color: mat-color($foreground, text);
         }
@@ -41,7 +37,7 @@
 
     div {
       span {
-        color: rgb(255, 255, 255);
+        color: white;
       }
     }
   }

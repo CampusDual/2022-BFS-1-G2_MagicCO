@@ -1,22 +1,12 @@
+<div class="full-page">
 
+  <app-page-header></app-page-header>
 
-   <o-button (click)="loginPrincipal()" label="Login / Register" layout-padding color="primary"></o-button>
-
-
-
-
-
- <!--
-
-<o-grid-item *ngFor="let list of grid.dataArray">
-     <o-column layout-padding class="container-item">
-     </o-column>
-  </o-grid-item>
-
-
- -->
-
- <o-image attr="image" data="http://placekitten.com/1920/1080" height="200" width="300"
- auto-fit="true" enabled="false" read-only="false" show-controls="false"
- full-screen-button="false" empty-image="./assets/images/no-image.png"></o-image>
-
+  <div id="footer" class="footer-container">
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <span>{{ 'FOOTER_CREATED_BY' | oTranslate }}</span>
+      <span> &copy; 2022 </span>
+      <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
+    </div>
+  </div>
+</div>
