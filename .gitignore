@@ -511,3 +511,4 @@ Thumbs.db
 
 # DB files
 *.lck
+.vscode/launch.json

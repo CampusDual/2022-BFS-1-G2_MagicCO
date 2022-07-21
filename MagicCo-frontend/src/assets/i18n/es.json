@@ -1,7 +1,7 @@
 {
   "APP_TITLE": "JEE seed",
   "VERSION": "Versión",
-  "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
+  "EXAMPLE_LOGIN_INFO": "Introduzca el usuario y la contraseña para logearse",
   "USERNAME": "Usuario",
   "PASSWORD": "Contraseña",
   "LOGIN": "Entrar",
@@ -17,8 +17,6 @@
   "ERROR_USER_PASS_INCORRECT": "Usuario o contraseña incorrecta",
   "REMEMBER_ME": "Recuérdame",
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
-  "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
-  "FOOTER_RIGHTS": "Todos los derechos reservados",
   "SERVICES": "Servicios",
   "ID_SERVICE": "ID",
   "ICON": "Logotipo",
@@ -35,5 +33,8 @@
   "EFFICIENCY_AS_PERCENTS": "Eficiencia, %",
   "SUCCESS_AS_PERCENTS": "Éxito, %",
   "YES": "Sí",
-  "NO": "No"
+  "NO": "No",
+  "FOOTER_CREATED_BY": "Creado por Magic & Co., Inc",
+  "FOOTER_RIGHTS": "Todos los derechos reservados",
+  "LOGIN_REGISTER": "Entrar / Registrarse"
 }
