@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ServicesNewComponent
   },
   {
-    path: ':ID_SERVICE',
+    path: ':id_service',
     component: ServicesDetailComponent
   }
 ];
