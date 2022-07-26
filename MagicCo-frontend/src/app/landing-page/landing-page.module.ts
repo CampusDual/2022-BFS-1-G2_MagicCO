@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { LandingPageRoutingModule } from './landing-page-routing.module';
 import { LandingServicesComponent } from './landing-services/landing-services.component';
 import { LandingPageComponent } from './landing-page.component';
@@ -14,7 +12,7 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    LandingPageRoutingModule,
+    LandingPageRoutingModule
   ],
   declarations: [
     LandingPageComponent,

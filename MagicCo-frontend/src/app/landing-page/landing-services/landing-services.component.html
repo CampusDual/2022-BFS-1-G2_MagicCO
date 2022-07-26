@@ -1,1 +1,13 @@
 <p>landing-services works!</p>
+
+
+<button (click) = "getInfo()" type="submit">Click me </button>
+
+<o-table fxFlex #servicetable attr="servicesTable" service="services" entity="service" keys="id_service"
+    columns="id_service;name"
+    visible-columns="name"
+      query-rows="25" auto-adjust="false" title-align="center" show-buttons-text="true" virtual-scroll="no"
+      detail-mode="dblclick" select-column-visible="yes" selection-mode="multiple">
+      <o-table-button (onClick) = "deleteItem(servicetable.getSelectedItems())" type="submit">Get object</o-table-button>
+      <o-table-column attr="name" title="{{'NAME' | oTranslate}}" content-align="left" multiline="yes" tooltip="yes"></o-table-column>
+</o-table>

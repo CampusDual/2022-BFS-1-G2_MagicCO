@@ -15,9 +15,10 @@ export class PageHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginPrincipal() {
+  goToLogin() {
     this.router.navigate(['./login']);
   }
 
+  
 
 }
