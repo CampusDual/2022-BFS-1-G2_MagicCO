@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'ontimize-web-ngx';
+import { Observable, OTableComponent } from 'ontimize-web-ngx';
 import { identifierModuleUrl } from '@angular/compiler';
 import { AuthService} from 'ontimize-web-ngx';
 
@@ -14,13 +14,15 @@ import { AuthService} from 'ontimize-web-ngx';
 })
 export class SubscriptionsHomeComponent implements OnInit {
 
+  @ViewChild('sstable', { read: OTableComponent, static: true }) public sstable: OTableComponent;
+
   constructor(private http: HttpClient,@Inject(AuthService) private authService: AuthService) { }
   
 
   ngOnInit() {
   }
 
-  public patata($event){
+  public patata(table: any){
     var ontimize="com.ontimize.web.ngx.jee.seed";
     localStorage.setItem('ontimize', 'Como utilizar el LocalStorage en Angular');
     var values = JSON.parse(localStorage.getItem(ontimize));
@@ -32,7 +34,7 @@ export class SubscriptionsHomeComponent implements OnInit {
     }),
     body: {
       "filter":{
-      ID_SUBSCRIPTION_SERVICE:9
+      ID_SUBSCRIPTION_SERVICE:table[0].ID_SUBSCRIPTION_SERVICE
       }
     }
   }

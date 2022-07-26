@@ -46,15 +46,15 @@
       store-state="false" query-rows="10" fixed-header="yes">  
       <o-table-row-expandable icon-collapse="expande_less" icon-expande="chevrow_right">
         <ng-template let-row>
-          <o-expandable-container [targets]="[SSTable]" [data]="row">
+          <o-expandable-container [targets]="[sstable]" [data]="row">
             
            
-            <o-table #SSTable  service="subscriptions" entity="subscriptionService" parent-keys="ID_SUBSCRIPTION" keys="ID_SUBSCRIPTION_SERVICE"
+            <o-table #sstable  service="subscriptions" entity="subscriptionService" parent-keys="ID_SUBSCRIPTION" keys="ID_SUBSCRIPTION_SERVICE"
               columns="ID_SUBSCRIPTION_SERVICE;ID_SUBSCRIPTION;SERVICE_NAME;SERVICE_PRICE" visible-columns="SERVICE_NAME;SERVICE_PRICE"
               title="services" query-rows="6" pageable="no" insert-button="yes" delete-button="no"
               detail-mode="none">
               <o-table-button label="Modificar " style="margin-top:-2%;margin-left:0%" class="o-table-button" attr="iconposition2"   layout-padding icon="arrow_forward_ios" icon-position="right" 
-            (onClick)="patata($event)"></o-table-button>
+            (onClick)="patata(sstable.getSelectedItems())"></o-table-button>
               <o-table-column attr="SERVICE_NAME" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
               <o-table-column attr="SERVICE_PRICE" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
             </o-table>
