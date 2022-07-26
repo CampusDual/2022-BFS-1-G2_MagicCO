@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { Observable, OTableComponent } from 'ontimize-web-ngx';
+import { Observable, OntimizeService, OTableComponent } from 'ontimize-web-ngx';
 import { identifierModuleUrl } from '@angular/compiler';
 import { AuthService} from 'ontimize-web-ngx';
 
@@ -14,20 +14,22 @@ import { AuthService} from 'ontimize-web-ngx';
 })
 export class SubscriptionsHomeComponent implements OnInit {
 
-  @ViewChild('sstable', { read: OTableComponent, static: true }) public sstable: OTableComponent;
+  //@ViewChild('sstable', { read: OTableComponent, static: true }) public sstable: OTableComponent;
 
-  constructor(private http: HttpClient,@Inject(AuthService) private authService: AuthService) { }
-  
+  constructor(private http: HttpClient,@Inject(AuthService) private authService: AuthService, @Inject(OntimizeService) private service: OntimizeService) { }
+
 
   ngOnInit() {
   }
 
   public patata(table: any){
+    this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
+    this.service.delete(table[0].ID_SUBSCRIPTION_SERVICE);
     var ontimize="com.ontimize.web.ngx.jee.seed";
     localStorage.setItem('ontimize', 'Como utilizar el LocalStorage en Angular');
     var values = JSON.parse(localStorage.getItem(ontimize));
     var idFinal=this.authService.getSessionInfo().id;
-
+/*
     const options ={ headers : new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer "+ idFinal //buscar en local storage
@@ -46,23 +48,7 @@ export class SubscriptionsHomeComponent implements OnInit {
         console.log('Error: ', error);
     }
     );
-    
+    */
   }
 
 }
-/*
-const options = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-  body: {
-    id: 1,
-    name: 'test',
-  },
-};
-
-this.httpClient
-  .delete('http://localhost:8080/something', options)
-  .subscribe((s) => {
-    console.log(s);
-  });*/
