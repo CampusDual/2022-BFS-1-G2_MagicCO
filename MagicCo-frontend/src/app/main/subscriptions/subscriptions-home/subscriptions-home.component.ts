@@ -23,8 +23,22 @@ export class SubscriptionsHomeComponent implements OnInit {
   }
 
   public patata(table: any){
+    // fixed the delete method
+    // https://ontimizeweb.github.io/docs/v8/guide/service/
     this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
-    this.service.delete(table[0].ID_SUBSCRIPTION_SERVICE);
+    const FILTER ={
+      "ID_SUBSCRIPTION_SERVICE": table[0].ID_SUBSCRIPTION_SERVICE
+    };
+    this.service.delete(FILTER, 'subscriptionServiceService')
+      .subscribe(resp => {
+      if (resp.code === 0) {
+        // resp.data contains the data retrieved from the server
+      } else {
+        alert('Impossible to delete data!');
+      }
+    });
+    //end
+
     var ontimize="com.ontimize.web.ngx.jee.seed";
     localStorage.setItem('ontimize', 'Como utilizar el LocalStorage en Angular');
     var values = JSON.parse(localStorage.getItem(ontimize));
