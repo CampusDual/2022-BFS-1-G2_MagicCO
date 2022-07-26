@@ -43,10 +43,15 @@ public class SubscriptionService implements ISubscriptionService {
      return this.daoHelper.delete(this.subscriptionDao, keyMap);
     }
 
-//cambios
+    //cambios
  @Override
- public EntityResult offerSubscriptionServiceDetailsQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+ public EntityResult subscriptionServiceQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
   return this.daoHelper.query(this.subscriptionDao, keyMap, attrList, SubscriptionDao.QUERY_SHOW_DETAILS);
  }
+
+@Override
+public EntityResult subscriptionServiceDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+  return this.daoHelper.delete(this.subscriptionDao, keyMap);
+}
 
 }

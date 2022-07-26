@@ -12,7 +12,27 @@
   <Column>ID_SUBSCRIPTION</Column>
  </UpdateKeys>
  <GeneratedKey>ID_SUBSCRIPTION</GeneratedKey>
-
- 
-
+ <Queries>
+  <Query id="details">
+  <AmbiguousColumns>
+        <AmbiguousColumn name="SERVICE_PRICE" prefix="SE" databaseName="PRICE"/>
+        <AmbiguousColumn name="SUBSCRIPTION_PRICE" prefix="SU" databaseName="PRICE"/>
+        <AmbiguousColumn name="SERVICE_NAME" prefix="SE" databaseName="NAME"/>
+        <AmbiguousColumn name="SUBSCRIPTION_NAME" prefix="SU" databaseName="NAME"/>
+  </AmbiguousColumns>
+   <Sentence>
+   <![CDATA[
+      SELECT
+      #COLUMNS#
+     FROM
+      PUBLIC.SUBSCRIPTION_SERVICE SS
+     INNER JOIN PUBLIC.SERVICE SE ON
+      SS.ID_SERVICE = SE.ID_SERVICE
+     INNER JOIN PUBLIC.SUBSCRIPTION SU ON
+      SS.ID_SUBSCRIPTION = SU.ID_SUBSCRIPTION     
+    #WHERE#
+   ]]>
+   </Sentence>
+  </Query>
+ </Queries>
 </JdbcEntitySetup>

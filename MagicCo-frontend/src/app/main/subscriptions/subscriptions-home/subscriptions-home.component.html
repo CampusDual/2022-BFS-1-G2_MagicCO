@@ -1,0 +1,67 @@
+<!--<div fxFill>
+    <o-table fxFlex attr="subscriptionsTable" service="subscriptions" entity="subscription" keys="ID_SUBSCRIPTION"
+      columns="NAME;PRICE"
+      visible-columns="NAME;PRICE"
+      query-rows="25" auto-adjust="false" title-align="center" show-buttons-text="true" >
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column service="subscriptions" entity="offerSubscriptionServiceDetails" keys="ID_SUBSCRIPTION" title="SERVICES_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+     </o-table>
+
+    
+  </div>
+  <div>
+    
+  
+  <o-table fxFill #table  service="subscriptions" entity="offerSubscriptionServiceDetails" keys="ID_SUBSCRIPTION" [groupable]="true"
+  columns="SUBSCRIPTION_NAME;SUBSCRIPTION_PRICE;SERVICE_NAME" 
+      title="Subscriptions_service" insert-button="yes" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      query-rows="10" fixed-header="yes">
+      <o-table-column attr="SUBSCRIPTION_NAME" title-align="center" content-align="center" groupable="true"></o-table-column>
+      <o-table-column attr="SUBSCRIPTION_PRICE" title-align="center" content-align="center" ></o-table-column>
+      <o-table-column attr="SUBSCRIPTION_NAME" title-align="center" content-align="center" ></o-table-column>
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column title="SERVICES_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{{'SERVICE_NAME' | oTranslate}}</strong>: {{row.SERVICE_NAME}}</span>>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span  fxFlex="20%"><strong>{{'SERVICE_PRICE' | oTranslate}}</strong>: {{row.SERVICE_PRICE}}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>
+    </div>-->
+
+<div>
+    <o-table fxFill #table  service="subscriptions" entity="subscription" keys="ID_SUBSCRIPTION" columns="NAME;PRICE"
+      title="Tiers" insert-button="yes" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+      store-state="false" query-rows="10" fixed-header="yes">  
+      <o-table-row-expandable icon-collapse="expande_less" icon-expande="chevrow_right">
+        <ng-template let-row>
+          <o-expandable-container [targets]="[SSTable]" [data]="row">
+            
+           
+            <o-table #SSTable  service="subscriptions" entity="subscriptionService" parent-keys="ID_SUBSCRIPTION" keys="ID_SUBSCRIPTION_SERVICE"
+              columns="ID_SUBSCRIPTION_SERVICE;ID_SUBSCRIPTION;SERVICE_NAME;SERVICE_PRICE" visible-columns="SERVICE_NAME;SERVICE_PRICE"
+              title="services" query-rows="6" pageable="no" insert-button="yes" delete-button="no"
+              detail-mode="none">
+              <o-table-button label="Modificar " style="margin-top:-2%;margin-left:0%" class="o-table-button" attr="iconposition2"   layout-padding icon="arrow_forward_ios" icon-position="right" 
+            (onClick)="patata($event)"></o-table-button>
+              <o-table-column attr="SERVICE_NAME" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
+              <o-table-column attr="SERVICE_PRICE" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
+            </o-table>
+          </o-expandable-container>
+        </ng-template>
+      </o-table-row-expandable>     
+    </o-table>
+  </div>
+  
+ 

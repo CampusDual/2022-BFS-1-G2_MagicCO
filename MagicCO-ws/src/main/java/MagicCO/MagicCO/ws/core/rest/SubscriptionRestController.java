@@ -17,4 +17,5 @@ public class SubscriptionRestController extends ORestController<ISubscriptionSer
  public ISubscriptionService getService() {
   return this.subscriptionService;
  }
+ 
 }
