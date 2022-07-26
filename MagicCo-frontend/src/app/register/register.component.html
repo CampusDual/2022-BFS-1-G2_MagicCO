@@ -3,7 +3,7 @@
 
     <div class="wrapp-register">
       <div fxFill fxLayout="column" fxLayoutAlign="center center" class="register-inner-container">
-        <o-form [formGroup]="registerForm" service="users" entity="user" keys="user_" header-actions="I" show-header="no">
+        <!--<o-form [formGroup]="registerForm" service="users" entity="user" keys="user_" header-actions="I" show-header="no">
 
           <o-text-input attr="username" label="{{ 'USERNAME' | oTranslate }}" required="yes"></o-text-input>
           <o-email-input attr="email" label="Email" read-only="no" required="yes" ></o-email-input>
@@ -11,6 +11,50 @@
           <o-password-input id="cpassword" attr="cpassword" label="{{ 'REPEAT_PASSWORD' | oTranslate }}" read-only="no" required="yes" (onValueChange)="onValueChange($event)"></o-password-input>
           <div><p id="errormessage" visible="false">Las contraseñas no coinciden</p></div>
           <o-button id="buttonregister" label="{{ 'REGISTER' | oTranslate }}" (click)="register()" layout-padding color="primary"></o-button>
+        </o-form>-->
+
+
+
+        <o-form [formGroup]="registerForm" (ngSubmit)="register()" entity="user" keys="user_" header-actions="I" show-header="no">
+          <o-column display="flex" fxFlex="75" align-items="center" justifyContent="center">
+            <!--*** EMAIL ***-->
+            <div class="row-reg center between">
+              <mat-form-field class="column-reg" [ngClass]="">
+                <mat-label>{{'USERNAME' | oTranslate}}</mat-label>
+                <input class="input-register" matInput type="text" formControlName="username" placeholder="Your Nick"
+                  required="true" variant="outlined">
+              </mat-form-field>
+              <mat-form-field class="column-reg" [ngClass]="">
+                <mat-label>{{'EMAIL' | oTranslate}}</mat-label>
+                <input class="input-register" matInput type="email" formControlName="email" required="true">
+              </mat-form-field>
+            </div>
+
+            <!--*** PASSWORD + REPEAT_PASSWORD ***-->
+            <div class="row-reg center between">
+              <mat-form-field class="column-reg" [ngClass]="">
+                <mat-label>{{'PASSWORD' | oTranslate}}</mat-label>
+                <input class="input-register" matInput type="password" formControlName="password"
+                  name="password" ng-model="user.pass" required="true"
+                  (keyup)="checkPasswords($event.target.value)">
+              </mat-form-field>
+              <mat-form-field class="column-reg" [ngClass]="">
+                <mat-label>{{'REPEAT_PASSWORD' | oTranslate}}</mat-label>
+                <input class="input-register" matInput type="password" formControlName="confirmPass" name="confirmPass"
+                  ng-model="user.confirmPassword" required="true"
+                  (keyup)="checkPasswords($event.target.value)">
+                <mat-hint align="start">
+                  <strong>
+                    <mat-error *ngIf="this.match">
+                      Las contraseñas no coinciden
+                    </mat-error>
+                  </strong>
+                </mat-hint>
+              </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" type="submit" [ngStyle]="{'color':'#8b97a1'}"
+              [disabled]="registerForm.invalid">{{'REGISTER' | oTranslate}}</button>
+          </o-column>
         </o-form>
       </div>
     </div>
