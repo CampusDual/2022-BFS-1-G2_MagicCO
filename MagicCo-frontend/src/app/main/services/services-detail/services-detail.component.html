@@ -1,0 +1,40 @@
+<o-form service="services" entity="service" keys="id_service" header-actions="R;I;U;D" show-header-navigation="yes">
+  <o-text-input attr="id_service" label="{{'ID_SERVICE' | oTranslate}}" enabled="no" sql-type="integer"></o-text-input>
+  <o-text-input class="input-padding" attr="name" label="{{'NAME' | oTranslate}}" fxFlex="150" required="yes"></o-text-input>
+    <o-row>
+      <o-column fxFlex>
+        <o-currency-input class="input-padding" attr="price" label="{{'PRICE' | oTranslate}}"fxFlex="80" required="yes" read-only="no" min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+        <o-image class="input-padding" fxFlex="80" id='icon' attr="icon" label="{{'ICON' | oTranslate}}" empty-image="assets/images/no-image.png" ></o-image>
+      </o-column>
+      <o-column title-label="SERVICE_ADDITIONAL_INFORMATION" fxFlex>
+        <o-integer-input attr="fidelity_points" label="{{'FIDELITY_POINTS' | oTranslate}}" fxFlex="80" read-only="no" required="yes" min="0">
+        </o-integer-input>
+        <o-integer-input attr="duration_time" label="{{'DURATION_TIME' | oTranslate}}" fxFlex="80" read-only="no" required="yes"  min="1" max="28">
+        </o-integer-input>
+        <o-real-input attr="efficiency_percentage" label="{{'EFFICIENCY_PERCENTAGE' | oTranslate}}" fxFlex="80" read-only="no" required="yes" min-decimal-digits="2" min="0" max="99">
+        </o-real-input>
+        <o-real-input attr="success_percentage" label="{{'SUCCESS_PERCENTAGE' | oTranslate}}" fxFlex="80" read-only="no" required="yes" min-decimal-digits="2" min="0" max="99">
+        </o-real-input>
+      </o-column>
+      <o-column title-label="SERVICE_ADDITIONAL_INFORMATION" fxFlex>
+        <o-combo attr="magic_status" label="{{'MAGIC_STATUS' | oTranslate}}" [static-data]="[{magic_status: false}, {magic_status: true}]"
+        value-column="magic_status" columns="magic_status" visible-columns="magic_status" required="yes"
+        fxFlex query-on-init="false" query-on-blind="true">
+          <o-combo-renderer-boolean boolean-type="boolean" render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}"></o-combo-renderer-boolean>
+        </o-combo>
+        <o-combo attr="legality_status" label="{{'LEGALITY_STATUS' | oTranslate}}" [static-data]="[{legality_status: false}, {legality_status: true}]"
+        value-column="legality_status" columns="legality_status" visible-columns="legality_status" required="yes"
+        fxFlex query-on-init="false" query-on-blind="true">
+          <o-combo-renderer-boolean boolean-type="boolean" render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}"></o-combo-renderer-boolean>
+        </o-combo>
+        <o-combo attr="bonus" label="{{'BONUS' | oTranslate}}" [static-data]="[{bonus: false}, {bonus: true}]"
+        value-column="bonus" columns="bonus" visible-columns="bonus" required="yes"
+        fxFlex query-on-init="false" query-on-blind="true">
+        <o-combo-renderer-boolean boolean-type="boolean" render-true-value="{{'YES' | oTranslate}}" render-false-value="{{'NO' | oTranslate}}"></o-combo-renderer-boolean>
+        </o-combo>
+      </o-column>
+    </o-row>
+    <o-row>
+      <o-textarea-input attr="description" label="{{'DESCRIPTION' | oTranslate}}" fxFlex></o-textarea-input>
+    </o-row>
+</o-form>
