@@ -77,78 +77,7 @@ export class RegisterComponent implements OnInit {
         }
     });
     localStorage.clear();
-
-    // this.authService.logout;
-    /*const data = {
-      "USER_": this.registerForm.value.username,
-      "EMAIL": this.registerForm.value.email,
-      "PASSWORD": this.registerForm.value.password
-    };
-    const sqlTypes = {
-      "USER_":12,
-      "EMAIL":12,
-      "PASSWORD":12
-    };
-    const header = {
-      'content-type': 'application/json',
-      'Authorization': 'Basic ' + btoa('demo:demouser')
-    };
-    console.log(header);
-
-    const body =
-      '{"data": {' + data +'}  ,"sqltypes": {' + sqlTypes+ '}} ';*/
-
-    // var idFinal="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGlvbi10aW1lIjoxNjU3MDA2NjA3MjA3LCJ1c2VybmFtZSI6ImFkbWluaXN0cmF0b3IifQ.ceXatWm60xn4w87yHT-6mZW_Wz3gsTua23pxfS2cTwU";
-    // console.log(idFinal);
-    // const headers = new HttpHeaders({
-    //   "Content-Type": "application/json; charset=utf-8",
-    //   Authorization: "Bearer " + idFinal
-    // });
-
-    // let body = {
-    //   "data" : {
-    //     "USER_": this.registerForm.value.username,
-    //     "EMAIL": this.registerForm.value.email,
-    //     "PASSWORD": this.registerForm.value.password
-    //   },
-    //   "sqlTypes" : {
-    //     "USER_":12,
-    //     "EMAIL":12,
-    //     "PASSWORD":12
-    //   }
-    // };
-    //         const options ={
-    //         headers : new HttpHeaders({
-    //           'Content-Type': 'application/json',
-    //           'Authorization': "Bearer "+ idFinal
-    //         }),
-    //         body: {
-    //           "data" : {
-    //             "USER_": this.registerForm.value.username,
-    //             "EMAIL": this.registerForm.value.email,
-    //             "PASSWORD": this.registerForm.value.password
-    //           },
-    //           "sqlTypes" : {
-    //             "USER_":12,
-    //             "EMAIL":12,
-    //             "PASSWORD":12
-    //           }
-    //         }
-    //       }
-    //       console.log(options);
-    //   //this.http.post(this.baseUrl, body, { headers: header })
-    //   this.http.post(this.baseUrl, body, {headers}).subscribe(
-    //     data => { // json data
-    //       console.log('Success: ', data);
-    //       this.router.navigate(['../login']);
-    //   },
-    //   error => {
-    //       console.log('Error: ', error);
-    //   }
-    //   );
   }
-
-
 
  createForm() {
     //console.log('method : createForm')
@@ -162,14 +91,14 @@ export class RegisterComponent implements OnInit {
   checkPasswords(){
     let stringpass = this.registerForm.value.password;
     let stringrepeat = this.registerForm.value.confirmPass;
-    if(stringpass.length < 6 || (stringrepeat.length < 6) && (stringrepeat != "") ){
+    if(stringpass.length < 6 || (stringrepeat.length < 6) && (stringrepeat != "")){
       if (this.dialogService) {
         const config: ODialogConfig = {
           okButtonText: 'Aceptar'
         };
         this.dialogService.error('Error', 'La contraseña no puede ser menor de 6 caracteres', config);
       }
-    }else if(stringpass != stringrepeat && ((stringpass != "") && (stringrepeat != ""))){
+    }else if(stringpass != stringrepeat){
       if (this.dialogService) {
         const config: ODialogConfig = {
           okButtonText: 'Aceptar'
@@ -177,10 +106,7 @@ export class RegisterComponent implements OnInit {
         this.dialogService.error('Error', 'Las contraseñas no coinciden', config);
       }
     }
-
-
   }
-
 }
 
 
