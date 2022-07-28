@@ -6,19 +6,19 @@
     catalog="" schema="${mainschema}" table="TUSER"
     datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
     <DeleteKeys>
-        <Column>user_</Column>
+        <Column>USER_</Column>
     </DeleteKeys>
     <UpdateKeys>
-        <Column>user_</Column>
+        <Column>USER_</Column>
     </UpdateKeys>
     <Queries>
         <Query id="default">
             <ValidColumns>
-                <Column>user_</Column>
-                <Column>email</Column>
-                <Column>password</Column>
-                <Column>name</Column>
-                <Column>surname</Column>
+                <Column>USER_</Column>
+                <Column>EMAIL</Column>
+                <Column>PASSWORD</Column>
+                <Column>NAME</Column>
+                <Column>SURNAME</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
@@ -29,14 +29,14 @@
                     #WHERE#
                 ]]>
             </Sentence>
-        </Query>    
+        </Query>
         <Query id="login">
             <ValidColumns>
-                <Column>user_</Column>
-                <Column>email</Column>
-                <Column>password</Column>
-                <Column>name</Column>
-                <Column>surname</Column>
+                <Column>USER_</Column>
+                <Column>EMAIL</Column>
+                <Column>PASSWORD</Column>
+                <Column>NAME</Column>
+                <Column>SURNAME</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
