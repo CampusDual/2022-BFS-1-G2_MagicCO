@@ -4,6 +4,7 @@
   "EXAMPLE_LOGIN_INFO": "Enter the username and password for login",
   "USERNAME": "Username",
   "PASSWORD": "Password",
+  "REPEAT_PASSWORD": "Repeat Password",
   "LOGIN": "Login",
   "LOGOUT": "Logout",
   "VIEW": "Views",
