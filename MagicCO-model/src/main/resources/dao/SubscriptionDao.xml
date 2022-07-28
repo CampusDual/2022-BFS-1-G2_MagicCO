@@ -24,14 +24,14 @@
    <Sentence>
    <![CDATA[
       select
-      #columns#
+      #COLUMNS#
      from
       public.subscription_service ss
      inner join public.service se on
       ss.id_service = se.id_service
      inner join public.subscription su on
       ss.id_subscription = su.id_subscription     
-    #where#
+    #WHERE#
    ]]>
    </Sentence>
   </Query>
