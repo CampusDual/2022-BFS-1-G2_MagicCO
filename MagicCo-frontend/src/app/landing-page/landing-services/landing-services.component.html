@@ -1,22 +1,25 @@
 <div>
   <o-grid #serviceGrid attr="serviceGrid" service="services" entity="service" keys="id_service"
     columns="id_service;name;price;fidelity_points;duration_time;legality_status;magic_status;efficiency_percentage;success_percentage;bonus;description"
-    cols="4" query-rows="4" show-page-size="false" orderable="false" quick-filter="false" pageable="false" show-footer="false"
+    col="4" query-rows="4" show-page-size="false" orderable="false" quick-filter="false" show-footer="true"
     controls="false" gutter-size="18px" detail-mode="none" pagination-controls="false"
     >
-    <o-grid-item *ngFor="let list of serviceGrid.dataArray">
-      <div (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="mat-elevation-z1">
-        <o-image fxFlex="80" id='icon' attr="{{list.icon}}" label="{{'ICON' | oTranslate}}" show-controls="no"
-        read-only="yes"
-        empty-image="assets/images/no-image.png" ></o-image>
-          <img [src]="sanitizer.bypassSecurityTrustUrl('data:image/*;base64,'+ list.icon)"width="50%" height="50%" alt="Image"/>
-          <img [src]="getImageSrc(list.icon)" width="72px" height="100px" />
-          <!-- <img [src]="{{list.icon}}" width="72px" height="100px" /> -->
-          <span><b>{{ list.name }} {{list.price}}</b></span>
-          <span><i>{{ list.fidelity_points }}</i></span>
-          <span>{{ list.legality_status }}</span>
-      </div>
-    </o-grid-item>
+    <ng-container *ngFor="let list of serviceGrid.dataArray">
+      <o-grid-item *ngIf="list.legality_status">
+        <div (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="mat-elevation-z1">
+          <o-image fxFlex="80" id='icon' attr="{{list.icon}}" label="{{'ICON' | oTranslate}}" show-controls="no"
+          read-only="yes" sql-type="blob"
+          empty-image="assets/images/no-image.png" ></o-image>
+            <!-- <img [src]="sanitizer.bypassSecurityTrustUrl('data:image/*;base64,'+ list.icon)"width="50%" height="50%" alt="Image"/>
+            <img [src]="getImageSrc(list.icon)" width="72px" height="100px" /> -->
+            <!-- <img [src]="{{list.icon}}" width="72px" height="100px" /> -->
+            <span><b>{{ list.name }} {{list.price}}</b></span>
+            <span><i>{{ list.fidelity_points }}</i></span>
+            <span>{{ list.legality_status }}</span>
+        </div>
+      </o-grid-item>
+    </ng-container>
+
   </o-grid>
 </div>
 
