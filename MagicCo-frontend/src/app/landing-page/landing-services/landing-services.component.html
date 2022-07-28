@@ -23,7 +23,7 @@
   </o-grid>
 </div>
 
-<o-list #servicelist attr="servicelist" title="{{'OUR_SERVICES' | oTranslate}}" service="services" entity="service" keys="id_service"
+<!-- <o-list #servicelist attr="servicelist" title="{{'OUR_SERVICES' | oTranslate}}" service="services" entity="service" keys="id_service"
 columns="id_service;name;price;fidelity_points;duration_time;legality_status;magic_status;efficiency_percentage;success_percentage;bonus;description"
 refresh-button="false" insert-button="false" delete-button="false"
   quick-filter="no" row-height="medium" detail-mode="none">
@@ -37,7 +37,6 @@ refresh-button="false" insert-button="false" delete-button="false"
   <mat-card *ngFor="let row of servicelist.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image">
-        <!-- <img matListAvatar fxFill src="./assets/images/ontimize.png"> -->
         <img src="{{ row.icon }}" fxFill />
       </div>
       <mat-card-title>{{row.name}}</mat-card-title>
@@ -56,7 +55,7 @@ refresh-button="false" insert-button="false" delete-button="false"
     </o-list-item-card-image>
   </o-list-item>
 
-</o-list>
+</o-list> -->
 
 
 <!-- <button (click) = "getInfo()" type="submit">Click me </button>
