@@ -2,7 +2,10 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Inject } from "@angular/core";
 import { inject } from '@angular/core/testing';
 import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
+import { MatDialog } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService, OntimizeService } from "ontimize-web-ngx";
+import { LandingServiceDetailComponent } from '../landing-service-detail/landing-service-detail.component';
 
 @Component({
   selector: 'app-landing-services',
@@ -15,6 +18,8 @@ export class LandingServicesComponent implements OnInit  {
 
   //@ViewChild('sstable', { read: OTableComponent, static: true }) public sstable: OTableComponent;
   constructor(
+    protected dialog: MatDialog,
+    protected sanitizer: DomSanitizer,
     @Inject(AuthService) private authService: AuthService,
     @Inject(OntimizeService) private service: OntimizeService,
     // protected injector: Injector
@@ -55,5 +60,19 @@ export class LandingServicesComponent implements OnInit  {
     });
   }
 
+  public getImageSrc(base64: any): any {
+    return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64.bytes) : './assets/images/no-image-transparent.png';
+  }
 
+
+  public openDetail(data: any): void {
+    this.dialog.open(LandingServiceDetailComponent, {
+      height: '330px',
+      width: '520px',
+      data: data
+    });
+  }
 }
+
+
+

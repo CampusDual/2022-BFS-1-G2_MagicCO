@@ -5,6 +5,7 @@ import { LandingPageComponent } from './landing-page.component';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../shared/shared.module';
 import { PageFooterComponent } from './page-footer/page-footer.component';
+import { LandingServiceDetailComponent } from './landing-service-detail/landing-service-detail.component';
 
 
 
@@ -17,7 +18,11 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
   declarations: [
     LandingPageComponent,
     LandingServicesComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    LandingServiceDetailComponent
+  ],
+  entryComponents:[
+    LandingServiceDetailComponent
   ]
 })
 export class LandingPageModule { }

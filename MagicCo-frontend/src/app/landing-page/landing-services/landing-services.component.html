@@ -1,7 +1,62 @@
-<p>landing-services works!</p>
+<div>
+  <o-grid #serviceGrid attr="serviceGrid" service="services" entity="service" keys="id_service"
+    columns="id_service;name;price;fidelity_points;duration_time;legality_status;magic_status;efficiency_percentage;success_percentage;bonus;description"
+    cols="4" query-rows="4" show-page-size="false" orderable="false" quick-filter="false" pageable="false" show-footer="false"
+    controls="false" gutter-size="18px" detail-mode="none" pagination-controls="false"
+    >
+    <o-grid-item *ngFor="let list of serviceGrid.dataArray">
+      <div (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="mat-elevation-z1">
+        <o-image fxFlex="80" id='icon' attr="{{list.icon}}" label="{{'ICON' | oTranslate}}" show-controls="no"
+        read-only="yes"
+        empty-image="assets/images/no-image.png" ></o-image>
+          <img [src]="sanitizer.bypassSecurityTrustUrl('data:image/*;base64,'+ list.icon)"width="50%" height="50%" alt="Image"/>
+          <img [src]="getImageSrc(list.icon)" width="72px" height="100px" />
+          <!-- <img [src]="{{list.icon}}" width="72px" height="100px" /> -->
+          <span><b>{{ list.name }} {{list.price}}</b></span>
+          <span><i>{{ list.fidelity_points }}</i></span>
+          <span>{{ list.legality_status }}</span>
+      </div>
+    </o-grid-item>
+  </o-grid>
+</div>
+
+<o-list #servicelist attr="servicelist" title="{{'OUR_SERVICES' | oTranslate}}" service="services" entity="service" keys="id_service"
+columns="id_service;name;price;fidelity_points;duration_time;legality_status;magic_status;efficiency_percentage;success_percentage;bonus;description"
+refresh-button="false" insert-button="false" delete-button="false"
+  quick-filter="no" row-height="medium" detail-mode="none">
+
+  <o-list-item *ngFor="let row of servicelist.dataArray">
+    <o-list-item-avatar #tem  avatar="{{ row.icon }}" title="{{ row.name }}" primary-text="{{ row.price }}"
+      secondary-text="{{ row.description }}" (icon-action)="addToFavorites(row, item)">
+    </o-list-item-avatar>
+  </o-list-item>
+
+  <mat-card *ngFor="let row of servicelist.dataArray" [o-list-item]="row">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <!-- <img matListAvatar fxFill src="./assets/images/ontimize.png"> -->
+        <img src="{{ row.icon }}" fxFill />
+      </div>
+      <mat-card-title>{{row.name}}</mat-card-title>
+      <mat-card-subtitle>{{'PRICE' | oTranslate}}: {{row.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </mat-card-content>
+  </mat-card>
+
+  <o-list-item #itemlist *ngFor="let row of servicelist.dataArray">
+    <o-list-item-card-image #item title="{{ row.name }}" subtitle="{{ row.price}}" content="{{ row.description}}"
+      image="{{ row.icon }}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
+       (icon-action)="onIconAction()" collapsible="false" collapsed="true">
+    </o-list-item-card-image>
+  </o-list-item>
+
+</o-list>
 
 
-<button (click) = "getInfo()" type="submit">Click me </button>
+<!-- <button (click) = "getInfo()" type="submit">Click me </button>
 
 <o-table fxFlex #servicetable attr="servicesTable" service="services" entity="service" keys="id_service"
     columns="id_service;name"
@@ -10,4 +65,4 @@
       detail-mode="dblclick" select-column-visible="yes" selection-mode="multiple">
       <o-table-button (onClick) = "deleteItem(servicetable.getSelectedItems())" type="submit">Get object</o-table-button>
       <o-table-column attr="name" title="{{'NAME' | oTranslate}}" content-align="left" multiline="yes" tooltip="yes"></o-table-column>
-</o-table>
+</o-table> -->
