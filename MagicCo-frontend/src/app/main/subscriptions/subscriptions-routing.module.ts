@@ -4,10 +4,17 @@ import { SubscriptionsHomeComponent } from './subscriptions-home/subscriptions-h
 import { SubscriptionlistComponent } from './subscriptions-home/subscriptionlist/subscriptionlist.component';
 
 
-const routes: Routes = [{
-  path:'',
-  component: SubscriptionsHomeComponent
-}];
+const routes: Routes = [
+  {
+    path: '',
+    component: SubscriptionsHomeComponent
+  },
+  {
+    path: ':id',
+    component: SubscriptionlistComponent
+  }
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

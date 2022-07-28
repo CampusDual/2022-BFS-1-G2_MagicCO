@@ -1,6 +1,6 @@
-<o-table #sstable service="services" entity="service" parent-keys="id_service" keys="id_service"
-  columns="service_name;service_price" visible-columns="service_name;service_price" title="services" query-rows="6"
+<o-table #sstable service="services" entity="service" keys="id_service"
+  columns="name;price" visible-columns="name;price" title="services" query-rows="6"
   pageable="no" insert-button="no" delete-button="no" detail-mode="none">
-  <o-table-column attr="service_name" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
-  <o-table-column attr="service_price" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
+  <o-table-column attr="name" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
+  <o-table-column attr="price" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
 </o-table>
