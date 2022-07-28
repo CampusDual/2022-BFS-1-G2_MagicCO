@@ -511,4 +511,4 @@ Thumbs.db
 
 # DB files
 *.lck
-MagicCO-model/src/main/db/templateDB.properties
+.vscode/launch.json

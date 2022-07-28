@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OComboComponent, OFormComponent } from 'ontimize-web-ngx';
 
 
 @Component({

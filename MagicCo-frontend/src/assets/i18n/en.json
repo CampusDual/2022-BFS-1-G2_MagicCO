@@ -1,7 +1,7 @@
 {
   "APP_TITLE": "Quickstart",
   "VERSION": "Version",
-  "EXAMPLE_LOGIN_INFO": "Use this user and password for login",
+  "EXAMPLE_LOGIN_INFO": "Enter the username and password for login",
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "LOGIN": "Login",
@@ -17,15 +17,13 @@
   "ERROR_USER_PASS_INCORRECT": "Invalid username or password",
   "REMEMBER_ME": "Remember me",
   "FORGOT_PWD": "Forgot your password?",
-  "FOOTER_CREATED_BY": "Created by Imatia Innovation",
-  "FOOTER_RIGHTS": "All rights reserved",
   "SERVICES": "Services",
   "ID_SERVICE": "Service ID",
   "ICON": "Icon",
   "NAME": "Service name",
   "PRICE": "Service price",
   "FIDELITY_POINTS": "Fidelity points",
-  "DURATION_TIME": "Duration time",
+  "DURATION_TIME": "Duration (in days)",
   "LEGALITY_STATUS": "Legal status",
   "MAGIC_STATUS": "Magic Status",
   "EFFICIENCY_PERCENTAGE": "Efficiency, %",
@@ -36,8 +34,7 @@
   "SUCCESS_AS_PERCENTS" : "Success, %",
   "YES": "Yes",
   "NO": "No",
-  "SETTINGS": "Settings",
-  "USERNAME": "Name",
-  "USERSURNAME": "Surname",
-  "USEREMAIL": "eMail"
+  "FOOTER_CREATED_BY": "Created by Magic & Co., Inc.",
+  "FOOTER_RIGHTS": "All rights reserved",
+  "LOGIN_REGISTER": "Login / Register"
 }

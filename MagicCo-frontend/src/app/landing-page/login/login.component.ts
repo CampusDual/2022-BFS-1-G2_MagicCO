@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   userCtrl: FormControl = new FormControl('', Validators.required);
   pwdCtrl: FormControl = new FormControl('', Validators.required);
   sessionExpired = false;
-
+  now1;
   router: Router;
 
   constructor(
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(AuthService) private authService: AuthService,
     @Inject(LocalStorageService) private localStorageService,
-    public injector: Injector
+    public injector: Injector,
   ) {
     this.router = router;
 
@@ -46,13 +46,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): any {
     this.navigation.setVisible(false);
 
+    // const now = new Date().getFullYear().toString;
+    // console.log(now);
+
     this.loginForm.addControl('username', this.userCtrl);
     this.loginForm.addControl('password', this.pwdCtrl);
 
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['../'], { relativeTo: this.actRoute });
+      // send to the main
+      this.router.navigate(['../../', 'main']);
+      // previous code:
+      // this.router.navigate(['../'], { relativeTo: this.actRoute });
     } else {
       this.authService.clearSessionData();
+      //this.router.navigate(['../', 'landing-page'])
     }
   }
 
@@ -64,7 +71,9 @@ export class LoginComponent implements OnInit {
       this.authService.login(userName, password)
         .subscribe(() => {
           self.sessionExpired = false;
-          self.router.navigate(['../'], { relativeTo: this.actRoute });
+          //send to the main
+          //self.router.navigate(['../'], { relativeTo: this.actRoute });
+          this.router.navigate(['../../', 'main']);
         }, this.handleError);
     }
   }
