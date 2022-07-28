@@ -1,1 +1,10 @@
-<p>subscriptionlist works!</p>
+    
+    
+    <o-table #sstable  service="services" entity="service" parent-keys="ID_SERVICE" keys="ID_SERVICE"
+        columns="SERVICE_NAME;SERVICE_PRICE" visible-columns="SERVICE_NAME;SERVICE_PRICE"
+        title="services" query-rows="6" pageable="no" insert-button="no" delete-button="no" detail-mode="none">       
+    
+        <o-table-column attr="SERVICE_NAME" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
+        <o-table-column attr="SERVICE_PRICE" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
+    </o-table>   
+  

@@ -27,5 +27,10 @@ public class SubscriptionServiceService implements ISubscriptionServiceService {
 public EntityResult subscriptionServiceServiceDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
   return this.daoHelper.delete(this.subscriptionServiceDao, keyMap);
 }
+@Override
+public EntityResult subscriptionServiceServiceInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+ return this.daoHelper.insert(this.subscriptionServiceDao, attrMap);
+}
+
 
 }

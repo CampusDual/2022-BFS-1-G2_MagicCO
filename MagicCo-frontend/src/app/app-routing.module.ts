@@ -9,6 +9,7 @@ export const routes: Routes = [
   // { path: '', loadChildren: () => import('./landing-page/landing-page.module').then(m => m.LandingPageModule) },
   { path: 'login', loadChildren: () => import('./landing-page/login/login.module').then(m => m.LoginModule) },
   { path: 'main', loadChildren: ()=> import('./main/main.module').then(m=>m.MainModule)},
+  { path: 'subscriptions', loadChildren: () => import('./main/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule) },
   //{ path: '', component: LandingPageModule, pathMatch: 'full' }
   //{ path: 'main', redirectTo: 'main', pathMatch: 'full' }
   { path: '', redirectTo: 'landing-page', pathMatch: 'full' }
