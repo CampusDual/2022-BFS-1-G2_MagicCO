@@ -17,6 +17,11 @@
 
         <o-form [formGroup]="registerForm" (ngSubmit)="register()" entity="user" keys="user_" header-actions="I" show-header="no">
           <o-column display="flex" fxFlex="75" align-items="center" justifyContent="center">
+
+            <div class="register-title-container" fxLayout="column">
+              <span class="title_text">Register a new account:</span>
+            </div>
+
             <!--*** EMAIL ***-->
             <div class="row-reg center between">
               <mat-form-field class="column-reg" [ngClass]="">
@@ -36,23 +41,16 @@
                 <mat-label>{{'PASSWORD' | oTranslate}}</mat-label>
                 <input class="input-register" matInput type="password" formControlName="password"
                   name="password" ng-model="user.pass" required="true"
-                  (keyup)="checkPasswords($event.target.value)">
+                  (change)="checkPasswords($event.target.value)">
               </mat-form-field>
               <mat-form-field class="column-reg" [ngClass]="">
                 <mat-label>{{'REPEAT_PASSWORD' | oTranslate}}</mat-label>
                 <input class="input-register" matInput type="password" formControlName="confirmPass" name="confirmPass"
                   ng-model="user.confirmPassword" required="true"
-                  (keyup)="checkPasswords($event.target.value)">
-                <mat-hint align="start">
-                  <strong>
-                    <mat-error *ngIf="this.match">
-                      Las contraseñas no coinciden
-                    </mat-error>
-                  </strong>
-                </mat-hint>
+                  (change)="checkPasswords($event.target.value)">
               </mat-form-field>
             </div>
-            <button mat-raised-button color="primary" type="submit" [ngStyle]="{'color':'#8b97a1'}"
+            <button mat-raised-button color="primary" type="submit"
               [disabled]="registerForm.invalid">{{'REGISTER' | oTranslate}}</button>
           </o-column>
         </o-form>

@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, Inject, OnInit, Injector } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService, Observable, OntimizeService, OValueChangeEvent } from 'ontimize-web-ngx';
+import { AuthService, DialogService, Observable, ODialogConfig, OntimizeService, OValueChangeEvent } from 'ontimize-web-ngx';
 import { RegisterService } from './register.service';
 import { User } from './user';
 
@@ -29,7 +29,8 @@ export class RegisterComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     @Inject(AuthService) private authService: AuthService,
-    protected injector: Injector
+    protected injector: Injector,
+    protected dialogService: DialogService
   ) {
       this.service = this.injector.get(OntimizeService);
     }
@@ -64,6 +65,16 @@ export class RegisterComponent implements OnInit {
       } else {
         alert('Impossible to delete data!');
       }
+    },
+      (error: HttpErrorResponse) => {
+        if(error.status == 500){
+          if (this.dialogService) {
+            const config: ODialogConfig = {
+              okButtonText: 'Aceptar'
+            };
+            this.dialogService.error('Error', 'El usuario ya existe', config);
+          }
+        }
     });
     localStorage.clear();
 
@@ -145,16 +156,28 @@ export class RegisterComponent implements OnInit {
       username: new FormControl('', [Validators.minLength(3), Validators.maxLength(25)]),
       email: new FormControl('', [Validators.minLength(3), Validators.pattern(this.emailPattern)]),
       password: new FormControl('', [Validators.minLength(6), Validators.maxLength(25)]),
-      confirmPass: new FormControl()
+      confirmPass: new FormControl('', [Validators.minLength(6), Validators.maxLength(25)])
     });
   }
   checkPasswords(){
     let stringpass = this.registerForm.value.password;
     let stringrepeat = this.registerForm.value.confirmPass;
-    if(stringpass != stringrepeat){
-      //alert(this.registerForm.valid);
-      this.match = true;
+    if(stringpass.length < 6 || (stringrepeat.length < 6) && (stringrepeat != "") ){
+      if (this.dialogService) {
+        const config: ODialogConfig = {
+          okButtonText: 'Aceptar'
+        };
+        this.dialogService.error('Error', 'La contraseña no puede ser menor de 6 caracteres', config);
+      }
+    }else if(stringpass != stringrepeat && ((stringpass != "") && (stringrepeat != ""))){
+      if (this.dialogService) {
+        const config: ODialogConfig = {
+          okButtonText: 'Aceptar'
+        };
+        this.dialogService.error('Error', 'Las contraseñas no coinciden', config);
+      }
     }
+
 
   }
 

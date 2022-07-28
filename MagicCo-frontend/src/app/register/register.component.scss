@@ -9,6 +9,10 @@
   position: relative;
   overflow: hidden;
 
+  .o-form{
+      flex: initial;
+  }
+
   .register-outer-container {
     width: 100%;
     height: 100%;
@@ -22,7 +26,7 @@
     overflow: auto;
 
     .register-bg-container {
-      background-image: url('^assets/images/login_bg.png');
+      background-image: url('^assets/images/register_bg.png');
       width: calc(100% - 640px);
       background-repeat: no-repeat;
       background-size: cover;
@@ -45,10 +49,10 @@
     }
 
     .wrapp-register {
-      width: 640px;
+      width: 100%;
       min-height: 100%;
 
-      .login-inner-container {
+      .register-inner-container {
         width: 100%;
 
         form {
@@ -129,12 +133,12 @@
 }
 @media(max-width:576px) {
   .full-page {
-    .login-outer-container {
-      .wrapp-login {
+    .register-outer-container {
+      .wrapp-register {
         width: 100%;
         min-height: 100%;
 
-        .login-inner-container {
+        .register-inner-container {
           width: 100%;
 
           form {
