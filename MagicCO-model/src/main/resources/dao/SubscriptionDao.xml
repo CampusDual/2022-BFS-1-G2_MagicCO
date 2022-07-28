@@ -6,12 +6,12 @@
  catalog="" schema="${mainschema}" table="SUBSCRIPTION"
  datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
  <DeleteKeys>
-  <Column>ID_SUBSCRIPTION</Column>
+  <Column>id_subscription</Column>
  </DeleteKeys>
  <UpdateKeys>
-  <Column>ID_SUBSCRIPTION</Column>
+  <Column>id_subscription</Column>
  </UpdateKeys>
- <GeneratedKey>ID_SUBSCRIPTION</GeneratedKey>
+ <GeneratedKey>id_subscription</GeneratedKey>
  <Queries>
   <Query id="details">
   <AmbiguousColumns>

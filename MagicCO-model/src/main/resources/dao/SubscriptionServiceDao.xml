@@ -6,11 +6,11 @@
  catalog="" schema="${mainschema}" table="SUBSCRIPTION_SERVICE"
  datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
  <DeleteKeys>
-  <Column>ID_SUBSCRIPTION_SERVICE</Column>
+  <Column>id_subscription_service</Column>
  </DeleteKeys>
  <UpdateKeys>
-  <Column>ID_SUBSCRIPTION_SERVICE</Column>
+  <Column>id_subscription_service</Column>
  </UpdateKeys>
- <GeneratedKey>ID_SUBSCRIPTION_SERVICE</GeneratedKey>
+ <GeneratedKey>id_subscription_service</GeneratedKey>
 </JdbcEntitySetup>
 <!--pasar a minusculas-->
