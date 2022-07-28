@@ -15,14 +15,14 @@
  <Queries>
   <Query id="details">
   <AmbiguousColumns>
-        <AmbiguousColumn name="service_price" prefix="se" databasename="price"/>
-        <AmbiguousColumn name="subscription_price" prefix="su" databasename="price"/>
-        <AmbiguousColumn name="service_name" prefix="se" databasename="name"/>
-        <AmbiguousColumn name="subscription_name" prefix="su" databasename="name"/>
-        <AmbiguousColumn name="id_subscription" prefix="ss" databasename="id_subscription"/>
+        <AmbiguousColumn name="service_price" prefix="se" databaseName="price"/>
+        <AmbiguousColumn name="subscription_price" prefix="su" databaseName="price"/>
+        <AmbiguousColumn name="service_name" prefix="se" databaseName="name"/>
+        <AmbiguousColumn name="subscription_name" prefix="su" databaseName="name"/>
+        <AmbiguousColumn name="id_subscription" prefix="ss" databaseName="id_subscription"/>
   </AmbiguousColumns>
    <Sentence>
-   <![cdata[
+   <![CDATA[
       select
       #columns#
      from
