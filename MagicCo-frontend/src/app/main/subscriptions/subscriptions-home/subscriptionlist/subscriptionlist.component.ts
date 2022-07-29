@@ -30,12 +30,23 @@ public subscriptionId;
     this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
         this.service.insert(data, 'subscriptionServiceService').subscribe(resp => {
           if (resp.code === 0) {
-           
+           this.avisar();
 
           } else {
             
         
           }
         });
+
+        
+  }
+  public avisar() {
+    if (this.dialogService) {
+      this.dialogService.info('Servicios',
+        'Ha insertado correctamente"');
+    }
+  }
+  public volver(){
+    this.router.navigateByUrl('/main/subscriptions');
   }
 }
