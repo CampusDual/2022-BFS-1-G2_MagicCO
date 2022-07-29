@@ -1,6 +1,9 @@
 <o-table #sstable service="services" entity="service" keys="id_service"
-  columns="name;price" visible-columns="name;price" title="services" query-rows="6"
+  columns="name;price" visible-columns="name;price" title="services" page-size="25"
   pageable="no" insert-button="no" delete-button="no" detail-mode="none">
   <o-table-column attr="name" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
   <o-table-column attr="price" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
+  <o-table-button label="Incluir"  attr="iconposition2" layout-padding icon="arrow_forward_ios" icon-position="right"
+              (onClick)="Incluir(sstable)"></o-table-button>
+  
 </o-table>

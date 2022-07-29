@@ -7,7 +7,6 @@ import { AuthService } from 'ontimize-web-ngx';
 import { Route, Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-subscriptions-home',
   templateUrl: './subscriptions-home.component.html',
