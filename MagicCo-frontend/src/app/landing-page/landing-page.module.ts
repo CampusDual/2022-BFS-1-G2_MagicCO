@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { LandingPageRoutingModule } from './landing-page-routing.module';
 import { LandingServicesComponent } from './landing-services/landing-services.component';
 import { LandingPageComponent } from './landing-page.component';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../shared/shared.module';
 import { PageFooterComponent } from './page-footer/page-footer.component';
+import { LandingServiceDetailComponent } from './landing-service-detail/landing-service-detail.component';
 
 
 
@@ -14,12 +13,16 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    LandingPageRoutingModule,
+    LandingPageRoutingModule
   ],
   declarations: [
     LandingPageComponent,
     LandingServicesComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    LandingServiceDetailComponent
+  ],
+  entryComponents:[
+    LandingServiceDetailComponent
   ]
 })
 export class LandingPageModule { }

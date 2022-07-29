@@ -4,6 +4,7 @@
   "EXAMPLE_LOGIN_INFO": "Enter the username and password for login",
   "USERNAME": "Username",
   "PASSWORD": "Password",
+  "REPEAT_PASSWORD": "Repeat Password",
   "LOGIN": "Login",
   "LOGOUT": "Logout",
   "VIEW": "Views",
@@ -37,5 +38,8 @@
   "FOOTER_CREATED_BY": "Created by Magic & Co., Inc.",
   "FOOTER_RIGHTS": "All rights reserved",
   "LOGIN_REGISTER": "Login / Register",
-  "SUBSCRIPTIONS": "Subscriptions"
+  "SUBSCRIPTIONS": "Subscriptions",
+  "OUR_SERVICES": "Our services",
+  "REGISTER": "Register",
+  "DETAILS": "Details"
 }
