@@ -28,16 +28,23 @@ public subscriptionId;
        "id_subscription": this.subscriptionId,
        "id_service":table.getSelectedItems()[0].id_service
       }
+
     this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
         this.service.insert(data, 'subscriptionServiceService').subscribe(resp => {
           if (resp.code === 0) {
            this.avisar();
 
-          } else {
-            
+          } 
+           
         
-          }
-        });
+          
+        
+        }, err =>{
+          if(this.dialogService){
+            this.dialogService.info('Servicios',
+        'El servicio ya esta asignado al tier actual"');
+        }
+       } );
 
         
   }
