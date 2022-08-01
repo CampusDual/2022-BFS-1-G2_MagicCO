@@ -3,8 +3,8 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { DialogService, Observable, OntimizeService, OTableComponent } from 'ontimize-web-ngx';
 import { identifierModuleUrl } from '@angular/compiler';
-import { AuthService } from 'ontimize-web-ngx';
 import { Route, Router } from '@angular/router';
+
 
 
 @Component({
@@ -26,6 +26,67 @@ export class SubscriptionsHomeComponent implements OnInit {
     //obtener el id
       this.router.navigateByUrl('/main/subscriptions/'+table.data.id_subscription)
   }
+  public deleteTier(table:any){
+    //this.dialogService.confirm('Aviso','Seguro que quiere borrar el tier nombre');
+    if(confirm("Seguro que quiere borrar?")) {
+       this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
+      const FILTER = { 
+            "id_subscription": table.getSelectedItems()[0].id_subscription          
+      };
+       this.service.delete(FILTER, 'subscription')
+            .subscribe(resp => {
+              if (resp.code === 0) {
+                window.location.reload();
+              } else {
+                this.dialogService.info('Servicios',
+                'Lo sentimos.No se ha podido borrar correctamente');
+              }
+            
+        });
+        
+    }
+}
+  public addTier(){
+    var x = document.getElementById("tier");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } 
+    var y=document.getElementById("tierName");
+    y.focus();
+  }
+
+  public Mostrartier(){
+    
+    var tierName = (<HTMLInputElement>document.getElementById("tierName")).value;
+    if (tierName!=""){
+    var data = {
+      "name":tierName
+     }
+   this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
+       this.service.insert(data, 'subscription').subscribe(resp => {
+         if (resp.code === 0) {
+          
+         } else {          
+       
+         }
+       });
+
+
+
+    
+   
+    this.dialogService.info('Servicios',
+        'Se ha insertado correctamente');
+
+        window.location.reload();
+  } else { this.dialogService.info('Servicios',
+  'No puede insertar un tier sin nombre');}
+  var x = document.getElementById("tier");
+  if (x.style.display === "block") {
+      x.style.display = "none";    
+  }
+}
+  
 
   public borrar(table: any) {
     // fixed the delete method
@@ -55,7 +116,7 @@ export class SubscriptionsHomeComponent implements OnInit {
   public avisar() {
     if (this.dialogService) {
       this.dialogService.info('Servicios',
-        'Ha borrado correctamente"');
+        'Ha borrado correctamente, por favor haga click en refresh para ver los cambios');
     }
   }
 

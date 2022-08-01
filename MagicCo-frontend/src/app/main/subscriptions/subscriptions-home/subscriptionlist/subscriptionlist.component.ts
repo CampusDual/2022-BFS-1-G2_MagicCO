@@ -21,6 +21,7 @@ public subscriptionId;
       this.subscriptionId = params['id'];
       });
   }
+  //reload table revisar
   public Incluir(table: any) {
     // https://ontimizeweb.github.io/docs/v8/guide/service/
     var data = {
