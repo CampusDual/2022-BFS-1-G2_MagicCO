@@ -23,29 +23,28 @@ export class SubscriptionsHomeComponent implements OnInit {
   }
 
   public insertar(table: any) {
-    //obtener el id
       this.router.navigateByUrl('/main/subscriptions/'+table.data.id_subscription)
   }
+
   public deleteTier(table:any){
-    //this.dialogService.confirm('Aviso','Seguro que quiere borrar el tier nombre');
     if(confirm("Seguro que quiere borrar?")) {
-       this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
+      this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
       const FILTER = { 
             "id_subscription": table.getSelectedItems()[0].id_subscription          
       };
-       this.service.delete(FILTER, 'subscription')
+      this.service.delete(FILTER, 'subscription')
             .subscribe(resp => {
               if (resp.code === 0) {
-                window.location.reload();
-              } else {
-                this.dialogService.info('Servicios',
-                'Lo sentimos.No se ha podido borrar correctamente');
-              }
-            
-        });
-        
+                window.location.reload();              
+              }            
+            }, err =>{
+               if(this.dialogService){
+                 this.dialogService.info('Servicios','No se puede borrar"');
+               }
+            } );        
     }
-}
+  }
+
   public addTier(){
     var x = document.getElementById("tier");
     if (x.style.display === "none") {
@@ -55,47 +54,41 @@ export class SubscriptionsHomeComponent implements OnInit {
     y.focus();
   }
 
-  public Mostrartier(){
-    
+  public Mostrartier(){    
     var tierName = (<HTMLInputElement>document.getElementById("tierName")).value;
-    if (tierName!=""){
-    var data = {
-      "name":tierName
-     }
-   this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
-       this.service.insert(data, 'subscription').subscribe(resp => {
+    var tierNameComprobacion = tierName;
+    tierNameComprobacion= tierNameComprobacion.replace(" ","");
+    if (tierNameComprobacion.length!=0 && tierNameComprobacion.trim()) {
+      var data = {
+        "name":tierName
+      }
+        this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
+        this.service.insert(data, 'subscription').subscribe(resp => {
          if (resp.code === 0) {
-          
-         } else {          
-       
+          this.dialogService.info('Servicios','Se ha insertado correctamente');
+          window.location.reload();
          }
-       });
-
-
-
-    
+        }, err =>{
+          if(this.dialogService){
+            this.dialogService.info('Servicios','Ya existe un tier con ese Nombre');
+          }
+       } );   
    
-    this.dialogService.info('Servicios',
-        'Se ha insertado correctamente');
-
-        window.location.reload();
-  } else { this.dialogService.info('Servicios',
-  'No puede insertar un tier sin nombre');}
-  var x = document.getElementById("tier");
-  if (x.style.display === "block") {
-      x.style.display = "none";    
+       
+    } else { this.dialogService.info('Servicios','No puede insertar un tier sin nombre');}
+      var x = document.getElementById("tier");
+      if (x.style.display === "block") {
+          x.style.display = "none";    
+      }
   }
-}
   
 
   public borrar(table: any) {
-    // fixed the delete method
     // https://ontimizeweb.github.io/docs/v8/guide/service/
     this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
     const FILTER = {
       "id_subscription_service": table.getSelectedItems()[0].id_subscription_service
     };
-
 
     this.service.delete(FILTER, 'subscriptionServiceService')
       .subscribe(resp => {
@@ -103,14 +96,11 @@ export class SubscriptionsHomeComponent implements OnInit {
           this.avisar();
           // resp.data contains the data retrieved from the server
         } else {
-          //revisar--------------------------------------------------------------------------------------------------
-          this.error();
+         
         }
       });
-    //end
-
-    var ontimize = "com.ontimize.web.ngx.jee.seed";
-    localStorage.setItem('ontimize', 'Como utilizar el LocalStorage en Angular');
+      var ontimize = "com.ontimize.web.ngx.jee.seed";
+      localStorage.setItem('ontimize', 'Como utilizar el LocalStorage en Angular');
   }
 
   public avisar() {

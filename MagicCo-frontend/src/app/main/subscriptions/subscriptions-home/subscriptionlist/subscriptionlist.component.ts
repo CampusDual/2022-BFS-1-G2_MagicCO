@@ -21,19 +21,18 @@ public subscriptionId;
       this.subscriptionId = params['id'];
       });
   }
-  //reload table revisar
+
   public Incluir(table: any) {
     // https://ontimizeweb.github.io/docs/v8/guide/service/
     var data = {
        "id_subscription": this.subscriptionId,
        "id_service":table.getSelectedItems()[0].id_service
-      }
+    }
 
     this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptionsservice"));
         this.service.insert(data, 'subscriptionServiceService').subscribe(resp => {
           if (resp.code === 0) {
            this.avisar();
-
           } 
            
         
@@ -41,12 +40,9 @@ public subscriptionId;
         
         }, err =>{
           if(this.dialogService){
-            this.dialogService.info('Servicios',
-        'El servicio ya esta asignado al tier actual"');
-        }
-       } );
-
-        
+            this.dialogService.info('Servicios','El servicio ya esta asignado al tier actual"');
+          }
+        } );        
   }
   public avisar() {
     if (this.dialogService) {
