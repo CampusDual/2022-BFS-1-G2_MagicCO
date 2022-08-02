@@ -40,5 +40,11 @@
   "LOGIN_REGISTER": "Entrar / Registrarse",
   "OUR_SERVICES": "Nuestros servicios",
   "REGISTER": "Registrarse",
-  "DETAILS": "Detalles"
+  "DETAILS": "Detalles",
+  "SHOPS": "Tiendas",
+  "SHOP_NAME": "Nombre de la tienda",
+  "REGION": "Region",
+  "LONGITUDE":"Longitude",
+  "LATITUDE": "Latitude",
+  "START_DATE": "Fecha inicio"
 }
