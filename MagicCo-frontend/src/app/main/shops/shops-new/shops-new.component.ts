@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { AuthService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-shops-new',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopsNewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(AuthService) private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
+  getUserId(){
+    return this.authService.getSessionInfo().user;
+  }
 }
