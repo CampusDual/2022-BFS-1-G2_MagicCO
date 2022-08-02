@@ -11,5 +11,4 @@ public class MainRestController {
 	public String main() {
 		return "index";
 	}
-	
 }
