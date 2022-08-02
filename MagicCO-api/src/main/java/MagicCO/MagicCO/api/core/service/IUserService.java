@@ -1,6 +1,4 @@
 package MagicCO.MagicCO.api.core.service;
-
-
 import java.util.List;
 import java.util.Map;
 

@@ -1,0 +1,43 @@
+
+
+<div >
+  <div id="tier" style="width:30%; margin-left:20px;display:none" >
+    
+      <input class="prueba" attr="tierName" label="Nombre del nuevo Tier" id="tierName">
+      <o-button enabled="yes" style="margin-left:0" display="block" label="Aceptar" name="aceptar" (onClick)="Mostrartier()"></o-button>
+
+  </div>
+  
+  <o-table fxFill #table service="subscriptions" entity="subscription" keys="id_subscription" columns="name;price"
+    title="Tiers" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none"
+    export-button="no" store-state="false" query-rows="10" fixed-header="yes">
+    <o-table-button label="Nuevo Tier" mode="dialog" title="BRANCHES" type="RAISED"
+              style="margin-top:-2%;margin-left:0%" class="o-table-button" attr="iconposition" layout-padding
+              icon="arrow_forward_ios" icon-position="right" (onClick)="addTier()">
+    </o-table-button>
+    <o-table-button label="Borrar Tier" mode="dialog" title="BRANCHES" type="RAISED"
+              style="margin-top:-2%;margin-left:0%" class="o-table-button" attr="iconposition" layout-padding
+              icon="arrow_forward_ios" icon-position="right" (onClick)="deleteTier(table)">
+    </o-table-button>
+   
+    <o-table-row-expandable icon-collapse="expande_less" icon-expande="chevrow_right">
+      <ng-template let-row>
+        <o-expandable-container #container [targets]="[sstable]" [data]="row">
+          <o-table #sstable service="subscriptions" entity="subscriptionService" parent-keys="id_subscription"
+            keys="id_subscription_service" columns="id_subscription_service;id_subscription;service_name;subscription_price;service_price"
+            visible-columns="service_name;service_price" title="services" query-rows="6" pageable="no"
+            insert-button="no" delete-button="no" detail-mode="none">
+            <o-table-button label="Insertar" mode="dialog" title="BRANCHES" type="RAISED"
+              style="margin-top:-2%;margin-left:0%" class="o-table-button" attr="iconposition" layout-padding
+              icon="arrow_forward_ios" icon-position="right" (onClick)="insertar(container)"></o-table-button>
+            <o-table-button label="Borrar" style="margin-top:-2%;margin-left:0%" class="o-table-button"
+              attr="iconposition2" layout-padding icon="arrow_forward_ios" icon-position="right"
+              (onClick)="borrar(sstable)"></o-table-button>
+            <o-table-column attr="service_name" title="SERVICE_NAME" class="o-table-column-centered"></o-table-column>
+            <o-table-column attr="service_price" title="SERVICE_PRICE" class="o-table-column-centered"></o-table-column>
+          </o-table>
+        </o-expandable-container>
+      </ng-template>
+    </o-table-row-expandable>
+  </o-table>
+</div>

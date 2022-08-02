@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JdbcEntitySetup
+ xmlns="http://www.ontimize.com/schema/jdbc"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
+ catalog="" schema="${mainschema}" table="SUBSCRIPTION"
+ datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+ <DeleteKeys>
+  <Column>id_subscription</Column>
+ </DeleteKeys>
+ <UpdateKeys>
+  <Column>id_subscription</Column>
+ </UpdateKeys>
+ <GeneratedKey>id_subscription</GeneratedKey>
+ <Queries>
+  <Query id="details">
+  <AmbiguousColumns>
+        <AmbiguousColumn name="service_price" prefix="se" databaseName="price"/>
+        <AmbiguousColumn name="subscription_price" prefix="su" databaseName="price"/>
+        <AmbiguousColumn name="service_name" prefix="se" databaseName="name"/>
+        <AmbiguousColumn name="subscription_name" prefix="su" databaseName="name"/>
+        <AmbiguousColumn name="id_subscription" prefix="ss" databaseName="id_subscription"/>
+  </AmbiguousColumns>
+   <Sentence>
+   <![CDATA[
+      select
+      #COLUMNS#
+     from
+      public.subscription_service ss
+     inner join public.service se on
+      ss.id_service = se.id_service
+     inner join public.subscription su on
+      ss.id_subscription = su.id_subscription     
+    #WHERE#
+   ]]>
+   </Sentence>
+  </Query>
+ </Queries>
+</JdbcEntitySetup>
