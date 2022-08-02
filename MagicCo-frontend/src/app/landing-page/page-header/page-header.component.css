@@ -1,0 +1,22 @@
+nav {
+    position: relative;
+    left: -1080px;
+    margin-bottom: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li:hover {
+    background: 235E3D;
+}
+
+nav a{  
+    display: block;
+    text-decoration: none;
+    padding-left: 30px;
+    color: black;
+}
+
