@@ -4,6 +4,7 @@ import { NavigationService } from 'ontimize-web-ngx';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../shared/shared.module';
 
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',

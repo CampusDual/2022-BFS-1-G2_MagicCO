@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
-import { LoginModule } from './landing-page/login/login.module';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'o-app',
@@ -13,15 +12,14 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  goToLogin(){
-    this.router.navigateByUrl('./login/')
-  }
-  
+  // goToLogin(){
+  //   this.router.navigateByUrl('./login/');
+  // }
+
 }
 
 
 
-      
 
 
-    
+
