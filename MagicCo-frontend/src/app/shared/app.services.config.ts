@@ -1,5 +1,11 @@
 export const SERVICE_CONFIG: Object = {
-  'services': {
+  'subscriptionsservice':{
+    'path':'/subscriptionsService'
+  },
+  'subscriptions': {
+    'path': '/subscriptions'
+  },
+  'services':{
     'path': '/services'
   },
   "settings":{
@@ -7,4 +13,5 @@ export const SERVICE_CONFIG: Object = {
   'users': {
    'path': '/users'
   }
+
 };

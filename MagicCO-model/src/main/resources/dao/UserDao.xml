@@ -29,7 +29,7 @@
                     #WHERE#
                 ]]>
             </Sentence>
-        </Query>    
+        </Query>
         <Query id="login">
             <ValidColumns>
                 <Column>USER_</Column>
