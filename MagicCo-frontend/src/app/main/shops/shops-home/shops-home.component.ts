@@ -14,6 +14,7 @@ export class ShopsHomeComponent implements OnInit {
     public region1: any;
     @ViewChild('shopsTable', { static: false })
     private shopsTable: OTableComponent;
+    private data;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -35,11 +36,16 @@ export class ShopsHomeComponent implements OnInit {
     // this.setCurrentUserIdFilter();
   }
 
-  setCurrentUserIdFilter() {
-    console.log(this.shopsTable);
+  ngAfterViewInit() {
+    this.configureService();
     this.shopsTable.queryData({
       'user_id': this.authService.getSessionInfo().user
     })
+  }
+
+  setCurrentUserIdFilter() {
+    console.log(this.shopsTable);
+
 
     // this.shopsTable.queryData(basicExpr);
 
