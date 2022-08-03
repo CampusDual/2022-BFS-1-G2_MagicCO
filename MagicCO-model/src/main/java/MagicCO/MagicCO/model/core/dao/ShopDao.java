@@ -21,4 +21,6 @@ public class ShopDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_LATITUDE         = "LATITUDE";
     public static final String ATTR_USER_ID          = "USER_ID";
     public static final String ATTR_DESCRIPTION      = "DESCRIPTION";
+    public static final String ATTR_START_DATE       = "START_DATE";
+    public static final String ATTR_ID_SHOP_SUBSCRIPTION       = "ID_SHOP_SUBSCRIPTION";
 }

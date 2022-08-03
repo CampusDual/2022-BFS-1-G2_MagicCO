@@ -12,6 +12,9 @@ export class ShopsHomeComponent implements OnInit {
     public id_shop1: any;
     public name1: any;
     public region1: any;
+
+    private userID;
+
     @ViewChild('shopsTable', { static: false })
     private shopsTable: OTableComponent;
     private data;
@@ -23,7 +26,8 @@ export class ShopsHomeComponent implements OnInit {
     protected injector: Injector,
     private actRoute: ActivatedRoute
   ) {
-     this.shopService = this.injector.get(OntimizeService);
+    this.userID = this.authService.getSessionInfo().user;
+    this.shopService = this.injector.get(OntimizeService);
   }
 
   protected configureService() {
@@ -62,7 +66,7 @@ export class ShopsHomeComponent implements OnInit {
   //   'shop'
   //   ).subscribe(resp => {
 
-  //     //Como devolver la query to html?
+  //     //Como devolver la query a html?
 
   //     // if (resp.data) {
   //     //   console.log(resp.data);

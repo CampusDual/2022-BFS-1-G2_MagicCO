@@ -1,9 +1,9 @@
 <o-form service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no">
-  <o-text-input attr="id_shop" sql-type="INTEGER" enabled="no"></o-text-input>
+  <o-text-input attr="id_shop" sql-type="INTEGER" enabled="no" ></o-text-input>
   <o-row>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
-        <o-text-input class="input-padding" attr="name" label="{{'SHOP_NAME' | oTranslate}}" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="name" label="{{'SHOP_NAME' | oTranslate}}" fxFlex="20" required="yes"></o-text-input>
         <o-combo attr="region" label="{{'REGION' | oTranslate}}" class="input-padding" fxFlex="20" service="regions"
            entity="region" keys="id_region" columns="region_name"
            visible-columns="region_name" value-column="region_name"></o-combo>
@@ -11,13 +11,35 @@
       </o-row>
       <o-row>
         <o-real-input attr="longitude" label="{{'LONGITUDE' | oTranslate}}" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
-          class="input-padding" fxFlex="50"></o-real-input>
+          class="input-padding" fxFlex="20"></o-real-input>
         <o-real-input attr="latitude" label="{{'LATITUDE' | oTranslate}}" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
-          fxFlex="50"></o-real-input>
-      </o-row>
-      <o-row>
-          <o-textarea-input attr="description" label="{{'DESCRIPTION' | oTranslate}}" fxFlex></o-textarea-input>
+          fxFlex="20"></o-real-input>
       </o-row>
     </o-column>
+    <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
+      <o-textarea-input attr="description" label="{{'DESCRIPTION' | oTranslate}}" fxFlex></o-textarea-input>
+    </o-column>
   </o-row>
+  <mat-tab-group fxFlex>
+    <mat-tab label="{{ 'SUBSCRIPTIONS' | oTranslate }}">
+      <o-column fxFlex layout-padding>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+      </o-column>
+    </mat-tab>
+    <mat-tab label="{{ 'SERVICES' | oTranslate }}">
+        <o-table>
+        </o-table>
+    </mat-tab>
+  </mat-tab-group>
 </o-form>
