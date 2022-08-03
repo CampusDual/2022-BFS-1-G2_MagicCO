@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { AuthService } from 'ontimize-web-ngx';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { AuthService, OFormComponent, OTableComponent, OTextInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-shops-new',
@@ -8,14 +8,22 @@ import { AuthService } from 'ontimize-web-ngx';
 })
 export class ShopsNewComponent implements OnInit {
 
+  @ViewChild('textInput', { read: OTextInputComponent, static: true }) public textInput: OTextInputComponent;
+  @ViewChild('textInput', { read: OFormComponent, static: true }) public form: OFormComponent;
   constructor(
     @Inject(AuthService) private authService: AuthService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
 
-  getValue(){
-    return this.authService.getSessionInfo().user;
+  ngAfterViewInit() {
+    this.form.setFieldValue("user_id", "user");
+  }
+
+  onSave() {
+    this.form.setFieldValue("user_id", "user")
+    this.form.insert();
   }
 }

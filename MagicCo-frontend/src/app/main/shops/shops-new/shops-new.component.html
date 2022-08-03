@@ -1,4 +1,4 @@
-<o-form service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no">
+<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no">
   <o-row>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
@@ -13,7 +13,7 @@
           class="input-padding" fxFlex="50"></o-real-input>
         <o-real-input attr="latitude" label="{{'LATITUDE' | oTranslate}}" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
           fxFlex="50"></o-real-input>
-        <o-text-input attr="user_id" [data]="getValue()" enabled="no"> </o-text-input>
+        <o-text-input #textInput attr="user_id" enabled="no"></o-text-input>
 
       </o-row>
       <o-row>
