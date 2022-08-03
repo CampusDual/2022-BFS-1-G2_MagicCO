@@ -1,10 +1,21 @@
+<!-- [expression-builder]="createFilter" -->
+
+<!-- <o-filter-builder #filterBuilder attr="thefilter" filters="user_id" [target]="shopsTable"
+query-on-change="no" query-on-change-delay="500"
+expression-builder="createFilter";
+></o-filter-builder> -->
+<!-- <button (click)="setCurrentUserIdFilter()" mat-raised-button color="accent" type="submit">Apply current user</button> -->
+
 <o-form-layout-manager title="{{'SHOPS' | oTranslate }}" separator=" | " mode="tab" label-columns="name">
+
+
   <div fxFill>
-    <o-table fxFlex attr="shopsTable" service="shops" entity="shop" keys="id_shop"
+    <o-table fxFlex #shopsTable attr="shopsTable" service="shops" entity="shop" keys="id_shop"
     columns="id_shop;name;region;longitude;latitude;description;start_date;user_id"
-    visible-columns="name;region;longitude;latitude;start_date;user_id"
+    visible-columns="name;region;longitude;latitude;start_date"
     query-rows="20" auto-adjust="false" title-align="center" show-buttons-text="true" virtual-scroll="no"
-    detail-mode="dblclick" select-column-visible="yes" selection-mode="multiple">
+    detail-mode="dblclick" select-column-visible="yes" selection-mode="multiple"
+    (onDataLoaded)="setCurrentUserIdFilter()">
       <o-table-column attr="name" title="{{'SHOP_NAME' | oTranslate}}" content-align="left" multiline="yes" tooltip="yes"></o-table-column>
       <o-table-column attr="user_id" title="{{'user' | oTranslate}}" content-align="left" multiline="yes" tooltip="yes"></o-table-column>
       <o-table-column attr="region" title="{{'REGION' | oTranslate}}"  content-align="left" multiline="yes" tooltip="yes"></o-table-column>
@@ -12,6 +23,7 @@
       <o-table-column attr="latitude" title="{{'LATITUDE' | oTranslate}}" title-align="center" content-align="center"></o-table-column>
       <o-table-column attr="start_date" title="{{'START_DATE' | oTranslate}}" type="date" format="LL"></o-table-column>
     </o-table>
+
   </div>
 </o-form-layout-manager>
 

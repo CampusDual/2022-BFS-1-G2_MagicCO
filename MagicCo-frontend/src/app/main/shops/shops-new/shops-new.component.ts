@@ -15,7 +15,7 @@ export class ShopsNewComponent implements OnInit {
   ngOnInit() {
   }
 
-  getUserId(){
+  getValue(){
     return this.authService.getSessionInfo().user;
   }
 }
