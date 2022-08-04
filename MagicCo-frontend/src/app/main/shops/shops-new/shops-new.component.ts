@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { AuthService, DialogService, OFormComponent, OFormDataComponent, OntimizeService, OTableComponent, OTextInputComponent } from 'ontimize-web-ngx';
-import { identifierModuleUrl } from '@angular/compiler';
-import { Route, Router } from '@angular/router';
-import { HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
+import { AuthService, DialogService, OFormComponent, OntimizeService, OTextInputComponent } from 'ontimize-web-ngx';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-shops-new',
