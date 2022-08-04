@@ -1,0 +1,52 @@
+.tier-container{
+  max-width: 50%;
+  margin: 20px auto;
+}
+
+#tiers-prices{
+  margin-top: 10%;
+}
+
+.o-image{
+  height: 100px !important;
+}
+
+#tiers-toggle{
+  margin: 10px 0;
+  text-align: center;
+}
+
+.mat-grid-tile {
+  overflow: inherit !important;
+}
+
+.mat-button-toggle-group-appearance-standard{
+  border-radius: 15px !important;
+  border: 3px solid #9a9176;
+}
+
+.mat-button-toggle-checked{
+  background-color: #9a9176;
+  color: #FFF !important ;
+}
+
+.container-item {
+  border: 3px solid #9a9176;
+  border-radius: 10px;
+}
+
+.tier-title{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.price-tier{
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.price-subtitle{
+  font-size: small;
+  font-weight: normal;
+}

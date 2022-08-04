@@ -6,6 +6,7 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../shared/shared.module';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { LandingServiceDetailComponent } from './landing-service-detail/landing-service-detail.component';
+import { LandingTiersComponent } from './landing-tiers/landing-tiers.component';
 
 
 
@@ -19,7 +20,8 @@ import { LandingServiceDetailComponent } from './landing-service-detail/landing-
     LandingPageComponent,
     LandingServicesComponent,
     PageFooterComponent,
-    LandingServiceDetailComponent
+    LandingServiceDetailComponent,
+    LandingTiersComponent
   ],
   entryComponents:[
     LandingServiceDetailComponent
