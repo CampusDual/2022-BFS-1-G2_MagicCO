@@ -1,4 +1,6 @@
 <o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="I" show-header-navigation="no">
+  <o-button (click)="testing()" label="test" layout-padding color="accent"></o-button>
+  <button (click)="onSave()" mat-raised-button color="accent" type="submit">onSave</button>
   <o-row>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
@@ -21,5 +23,5 @@
       </o-row>
     </o-column>
   </o-row>
-  <o-button attr="test" label="test" type="submit" (onClick)="testing()"></o-button>
+
 </o-form>

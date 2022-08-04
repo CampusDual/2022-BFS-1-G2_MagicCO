@@ -28,7 +28,7 @@ export class ShopsNewComponent implements OnInit {
   }
 
   testing(){
-    this.form.setFieldValue("user_id", "user")
+    this.form.setFieldValue("user_id", "user");
     this.form.insert();
     this.service.configureService(this.service.getDefaultServiceConfiguration("shops"));
     const currentDate = new Date().toISOString();
@@ -43,6 +43,7 @@ export class ShopsNewComponent implements OnInit {
       "start_date": currentDate
     };
     console.log(FILTER);
+    alert("Mira la consola");
   }
 
   onSave() {
