@@ -1,6 +1,7 @@
-<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="I" show-header-navigation="no">
-  <o-button (click)="testing()" label="test" layout-padding color="accent"></o-button>
-  <button (click)="onSave()" mat-raised-button color="accent" type="submit">onSave</button>
+<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="R" undo-button="no" show-header="no" show-header-navigation="no">
+  <div><o-button (click)="onSave()" label="Cancelar" color="accent"></o-button></div>
+  <div><o-button (click)="onSave()" label="Guardar" mat-raised-button color="accent" type="submit"
+    style="margin-left:500px" display="block"></o-button></div>
   <o-row>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
