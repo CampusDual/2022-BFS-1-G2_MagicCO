@@ -1,7 +1,5 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { AuthService, DialogService, OFormComponent, OntimizeService, OTextInputComponent } from 'ontimize-web-ngx';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { AuthService, DialogService, OFormComponent, OTextInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-shops-new',
@@ -13,10 +11,7 @@ export class ShopsNewComponent implements OnInit {
   @ViewChild('textInput', { read: OTextInputComponent, static: true }) public textInput: OTextInputComponent;
   @ViewChild('formform', { read: OFormComponent, static: true }) public form: OFormComponent;
 
-  constructor(private http: HttpClient,
-    private router: Router,
-    @Inject(OntimizeService) private service: OntimizeService,
-    @Inject(AuthService) private authService: AuthService,
+  constructor(@Inject(AuthService) private authService: AuthService,
     protected dialogService: DialogService) { }
 
   ngOnInit() {
