@@ -1,20 +1,18 @@
-<!-- <mat-dialog-content>
-<div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="service-detail" fxFill>
+ <mat-dialog-content>
+<div fxLayout="column"  class="service-detail" fxFill>
 
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
-    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40">
-      <div class="image">
-        <o-image fxFlex="80" id='icon' data ="data.icon" label="{{'ICON' | oTranslate}}" show-controls="no"
-        read-only="yes" empty-image="assets/images/no-image.png"></o-image>
-      </div>
-      <span class="servicename"><b>{{ data.name }} {{ data.price }}</b></span>
+ 
+      <div>
+        <div class="imagenservicio">
+        <o-image  id='icon' data ={{data.icon}} label="{{'ICON' | oTranslate}}" show-controls="no"
+        read-only="yes" empty-image="assets/images/no-image.png" ></o-image>
+        </div>
+      <h1 class="servicename"><b>{{ data.name }} {{ data.price }}</b></h1>
       <mat-divider></mat-divider>
       <span class="service-type"><i>{{ <data class="bonus"></data> }}</i></span>
       <mat-divider></mat-divider>
-    </div>
-    <div fxLayout="column" fxFlex="60" class="service-data">
       <span *ngIf="data.fidelity_points">
-        <mat-icon>email</mat-icon>{{ data.fidelity_points }}
+      <mat-icon>email</mat-icon>{{ data.fidelity_points }}
       </span>
       <span *ngIf="data.legality_status">
         <mat-icon>smartphone</mat-icon>{{ data.legality_status }}
@@ -22,12 +20,11 @@
       <span *ngIf="data.description">
         <mat-icon>home</mat-icon>{{ data.description }}
       </span>
-    </div>
-  </div>
 
-  <div fxLayout="row" fxLayoutAlign="end center">
+
+ 
     <span class="service-office">{{ data.name }}</span>
-  </div>
+    </div>
 
 </div>
-</mat-dialog-content> -->
+</mat-dialog-content> 

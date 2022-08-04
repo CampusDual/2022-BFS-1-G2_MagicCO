@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService, OntimizeService } from "ontimize-web-ngx";
 import { LandingServiceDetailComponent } from '../landing-service-detail/landing-service-detail.component';
 
+
 @Component({
   selector: 'app-landing-services',
   templateUrl: './landing-services.component.html',
@@ -67,10 +68,17 @@ export class LandingServicesComponent implements OnInit  {
 
   public openDetail(data: any): void {
     this.dialog.open(LandingServiceDetailComponent, {
-      height: '330px',
-      width: '520px',
+      height: '630px',
+      width: '365px',
       data: data
     });
+  }
+  over(){
+    console.log("Mouseover called");
+  }
+
+  out(){
+    console.log("Mouseout called");
   }
 }
 

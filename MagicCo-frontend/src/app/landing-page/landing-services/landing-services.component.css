@@ -1,0 +1,8 @@
+#Servicios:hover{
+    opacity:80%;
+    border: 2px solid yellow;
+    box-shadow:2px -2px 10px gold;    
+    transform: scaleY(1.04) scaleX(1.04);
+    
+}
+
