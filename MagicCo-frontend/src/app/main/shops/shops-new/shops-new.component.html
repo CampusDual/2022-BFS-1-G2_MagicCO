@@ -1,4 +1,4 @@
-<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no">
+<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="I" show-header-navigation="no">
   <o-row>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
@@ -21,4 +21,5 @@
       </o-row>
     </o-column>
   </o-row>
+  <o-button attr="test" label="test" type="submit" (onClick)="testing()"></o-button>
 </o-form>
