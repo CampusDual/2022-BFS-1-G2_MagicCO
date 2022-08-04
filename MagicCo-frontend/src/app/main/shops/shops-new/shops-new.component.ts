@@ -23,6 +23,10 @@ export class ShopsNewComponent implements OnInit {
   ngOnInit() {
   }
 
+  back(){
+    window.location.reload();
+  }
+
   onSave() {
     this.form.setFieldValue("user_id",this.authService.getSessionInfo().user);
     this.form.insert();
