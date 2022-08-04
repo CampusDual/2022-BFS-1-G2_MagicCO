@@ -2,6 +2,7 @@ package MagicCO.MagicCO.model.core.service;
 
 import MagicCO.MagicCO.api.core.service.IShopService;
 import MagicCO.MagicCO.model.core.dao.ShopDao;
+import MagicCO.MagicCO.model.core.dao.SubscriptionDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.common.security.PermissionsProviderSecured;
@@ -43,4 +44,15 @@ public class ShopService implements IShopService {
     public EntityResult shopDelete (Map<String,Object> keyMap) throws OntimizeJEERuntimeException{
         return this.daoHelper.delete(this.shopDao,keyMap);
     };
+
+    //shopSubscription
+    @Override
+    public EntityResult shopSubscriptionQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.shopDao, keyMap, attrList, ShopDao.QUERY_SHOW_DETAILS);
+    }
+
+    @Override
+    public EntityResult shopSubscriptionDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        return this.daoHelper.delete(this.shopDao, keyMap);
+    }
 }

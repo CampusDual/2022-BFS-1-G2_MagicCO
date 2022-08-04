@@ -17,20 +17,23 @@
             <AmbiguousColumns>
                 <AmbiguousColumn name="shop_start_date" prefix="sh" databaseName="start_date"/>
                 <AmbiguousColumn name="subscription_start_date" prefix="shsu" databaseName="start_date"/>
-                <AmbiguousColumn name="id_subscription" prefix="ss" databaseName="id_subscription"/>
+                <AmbiguousColumn name="shop_name" prefix="sh" databaseName="name"/>
+                <AmbiguousColumn name="subscription_name" prefix="su" databaseName="name"/>
+                <AmbiguousColumn name="id_shop" prefix="sh" databaseName="id_shop"/>
+                <AmbiguousColumn name="id_subscription_shop" prefix="shsu" databaseName="id_shop"/>
             </AmbiguousColumns>
             <Sentence>
                 <![CDATA[
-      select
-      #COLUMNS#
-     from
-     public.subscription_service ss
-     inner join public.service se on
-      ss.id_service = se.id_service
-     inner join public.subscription su on
-      ss.id_subscription = su.id_subscription
-    #WHERE#
-   ]]>
+                 select
+                  #COLUMNS#
+                 from
+                 public.shop_subscription shsu
+                 inner join public.shop sh on
+                  shsu.id_shop = sh.id_shop
+                 inner join public.subscription su on
+                  shsu.id_subscription = su.id_subscription
+                 #WHERE#
+               ]]>
             </Sentence>
         </Query>
     </Queries>

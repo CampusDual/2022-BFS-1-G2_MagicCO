@@ -15,4 +15,7 @@ public interface IShopService {
 	public EntityResult shopUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 	public EntityResult shopDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
+	public EntityResult shopSubscriptionQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+	public EntityResult shopSubscriptionDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
 }
