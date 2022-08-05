@@ -36,5 +36,26 @@
                ]]>
             </Sentence>
         </Query>
+        <Query id="shopReviewDetails">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="review_id_client" prefix="r" databaseName="id_client"/>
+                <AmbiguousColumn name="id_client" prefix="c" databaseName="id_client"/>
+                <AmbiguousColumn name="review_id_shop" prefix="r" databaseName="id_shop"/>
+                <AmbiguousColumn name="id_shop" prefix="sh" databaseName="id_shop"/>
+            </AmbiguousColumns>
+            <Sentence>
+                <![CDATA[
+                 select
+                  #COLUMNS#
+                 from
+                 public.shop sh
+                 inner join public.review r on
+                  r.id_shop = sh.id_shop
+                 inner join public.client c on
+                  c.id_client = r.id_client
+                 #WHERE#
+               ]]>
+            </Sentence>
+        </Query>
     </Queries>
     </JdbcEntitySetup>

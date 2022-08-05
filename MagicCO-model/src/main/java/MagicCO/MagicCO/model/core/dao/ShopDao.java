@@ -26,6 +26,8 @@ public class ShopDao extends OntimizeJdbcDaoSupport {
 
     //complex
     public static final String QUERY_SHOW_DETAILS               = "shopSubscriptionDetails";
+    public static final String QUERY_SHOW_REVIEWS               = "shopReviewDetails";
+
 //    public static final String ATTR_NAME_SUBSCRIPTION           = "NAME";
 //    public static final String ATTR_START_DATE_SUBSCRIPTION     = "START_DATE";
 //    public static final String ID_SHOP_SUBSCRIPTION             = "ID_SHOP_SUBSCRIPTION";

@@ -1,0 +1,12 @@
+<ng-template #statusColor let-cellvalue="cellvalue" let-rowvalue="rowvalue" >
+  {{getCellData(cellvalue, rowvalue)}}
+  <!-- <span class="movement-types-cell-renderer" [style.color]="color">
+    {{getCellData(cellvalue)}}
+  </span> -->
+  <!-- <span *ngIf="cellvalue === 'Terminado' " style="color:red;" fxLayoutAlign="end center">
+    <mat-icon>notification_important</mat-icon>
+  </span>
+  <span *ngIf="cellvalue === 'Activo'" style="color:green" fxLayoutAlign="end center">
+    <mat-icon>stars</mat-icon> {{getCellData(cellvalue, rowvalue)}}
+  </span> -->
+</ng-template>

@@ -6,6 +6,7 @@ import { OFormComponent, OntimizeWebModule } from 'ontimize-web-ngx';
 import { ShopsHomeComponent } from './shops-home/shops-home.component';
 import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 import { ShopsNewComponent } from './shops-new/shops-new.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ShopsNewComponent } from './shops-new/shops-new.component';
   imports: [
     CommonModule,
     ShopsRoutingModule,
-    OntimizeWebModule
+    OntimizeWebModule,
+    SharedModule
   ],
   providers: [
     { provide: OFormComponent }]

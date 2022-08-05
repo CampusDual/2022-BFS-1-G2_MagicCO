@@ -1,5 +1,5 @@
-<o-form #shopDetailsForm service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no">
-    <o-row-collapsible  expanded="no" description="This is a collapsible row">
+<o-form #shopDetailsForm service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no" fxFill>
+    <o-row-collapsible expanded="yes" description="This is a collapsible row">
       <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex="70" appearance='outline'>
         <o-row>
           <o-text-input class="input-padding" attr="name" label="{{'SHOP_NAME' | oTranslate}}" fxFlex="40" required="yes"></o-text-input>
@@ -34,12 +34,30 @@
         <o-table-column #ssd attr="subscription_start_date" title="{{'SUBSCRIPTION_START' | oTranslate}}" type="date" format="LL"></o-table-column>
         <o-table-column #sed attr="end_date" title="{{'SUBSCRIPTION_END' | oTranslate}}" type="date" format="LL"></o-table-column>
         <o-table-column attr="subscription_name" title="{{'SUBSCRIPTION_NAME' | oTranslate}}"></o-table-column>
-        <o-table-column #st attr="status" title="{{'STATUS' | oTranslate}}"></o-table-column>
+        <o-table-column #st attr="status" title="{{'STATUS' | oTranslate}}">
+
+        </o-table-column>
         <o-table-column attr="price" title="{{'SUBSCRIPTION_PRICE' | oTranslate}}" type="currency" class="o-table-column-centered"></o-table-column>
       </o-table>
     </div>
     </mat-tab>
     <mat-tab label="{{ 'SERVICES' | oTranslate }}">
+      <o-column fxFlex layout-padding>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+        <o-row>
+        </o-row>
+      </o-column>
+    </mat-tab>
+    <mat-tab label="{{ 'REVIEWS' | oTranslate }}">
       <o-column fxFlex layout-padding>
         <o-row>
         </o-row>
