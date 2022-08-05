@@ -28,31 +28,13 @@ export class ShopsDetailsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    // this.actRoute.params.subscribe(params => {
-    //   this.subscriptionId = params['id'];
-    //   console.log(this.subscriptionId);
-    //   alert(this.subscriptionId)
-    //   });
-    // this.checkSubscriptionStatus();
+
   }
 
   checkSubscriptionStatus() {
-    // console.log(this.ssd);
-    // alert(this.ssd);
-    let dateTime = new Date();
-    this.subscriptionTable.getValue();
-    // console.log(this.subscriptionTable.dataArray.forEach( item => {
-    //   if(item['status'] === 'Activo') {
-    //     alert(dateTime);
-    //   }
-    // }
-
-    // ))
-    // if (this.subscriptionTable.dataArray.filter((dataObject:any) => 'statusa' in dataObject)) {
-
-    // };
-
 
   }
+
+
 
 }
