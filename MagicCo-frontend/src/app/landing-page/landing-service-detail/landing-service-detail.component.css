@@ -24,3 +24,7 @@
     margin-left:15px;
     margin-bottom:5px;
 }
+
+#fondo{
+    background-color:transparent !important;
+}

@@ -1,7 +1,11 @@
-<div class="full-page">
-  <div class="register-outer-container">
 
+<div class="full-page">
+  <app-page-header></app-page-header>
+
+  <div class="register-outer-container">
+    
     <div class="wrapp-register">
+      
       <div fxFill fxLayout="column" fxLayoutAlign="center center" class="register-inner-container">
         <!--<o-form [formGroup]="registerForm" service="users" entity="user" keys="user_" header-actions="I" show-header="no">
 
@@ -14,8 +18,8 @@
         </o-form>-->
 
 
-
-        <o-form [formGroup]="registerForm" (ngSubmit)="register()" entity="user" keys="user_" header-actions="I" show-header="no">
+        <img src="../../assets/images/rpg-pixel.gif" class="gif">
+        <o-form [formGroup]="registerForm" (ngSubmit)="register()" entity="user" keys="user_" header-actions="I" show-header="no">         
           <o-column display="flex" fxFlex="75" align-items="center" justifyContent="center">
 
             <div class="register-title-container" fxLayout="column">
@@ -52,10 +56,13 @@
             </div>
             <button mat-raised-button color="primary" type="submit"
               [disabled]="registerForm.invalid">{{'REGISTER' | oTranslate}}</button>
-          </o-column>
-        </o-form>
+          </o-column>       
+        </o-form>        
       </div>
+     
+      
     </div>
+    
 
     <div id="footer" class="footer-container">
       <div fxLayout="row" fxLayoutAlign="end center">
@@ -64,6 +71,8 @@
         <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
       </div>
     </div>
-
   </div>
+  
+ 
 </div>
+
