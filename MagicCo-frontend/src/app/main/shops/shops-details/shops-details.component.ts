@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ODateInputComponent, OntimizeService, OTableCellEditorDateComponent, OTableComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-shops-details',
@@ -7,9 +9,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopsDetailsComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('shopSubscriptionTable', { static: false })
+  private subscriptionTable: OTableComponent;
 
-  ngOnInit() {
+  @ViewChild('ssd', { static: false })
+  private ssd: OTableCellEditorDateComponent;
+
+  public subscriptionId;
+
+  constructor(
+    private router: Router,
+    @Inject(OntimizeService) private service: OntimizeService,
+    private actRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+
+  }
+
+  ngAfterViewInit(){
+    this.actRoute.params.subscribe(params => {
+      this.subscriptionId = params['id'];
+      console.log(this.subscriptionId);
+      });
+    this.checkSubscriptionStatus();
+  }
+
+  checkSubscriptionStatus() {
+    console.log(this.ssd);
+    let dateTime = new Date();
+    this.subscriptionTable.getValue();
+    // console.log(this.subscriptionTable.dataArray.forEach( item => {
+    //   if(item['status'] === 'Activo') {
+    //     alert(dateTime);
+    //   }
+    // }
+
+    // ))
+    // if (this.subscriptionTable.dataArray.filter((dataObject:any) => 'statusa' in dataObject)) {
+
+    // };
+
+
   }
 
 }
