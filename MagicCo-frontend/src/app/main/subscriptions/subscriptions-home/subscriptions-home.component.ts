@@ -29,19 +29,19 @@ export class SubscriptionsHomeComponent implements OnInit {
   public deleteTier(table:any){
     if(confirm("Seguro que quiere borrar?")) {
       this.service.configureService(this.service.getDefaultServiceConfiguration("subscriptions"));
-      const FILTER = { 
-            "id_subscription": table.getSelectedItems()[0].id_subscription          
+      const FILTER = {
+            "id_subscription": table.getSelectedItems()[0].id_subscription
       };
       this.service.delete(FILTER, 'subscription')
             .subscribe(resp => {
               if (resp.code === 0) {
-                window.location.reload();              
-              }            
+                window.location.reload();
+              }
             }, err =>{
                if(this.dialogService){
                  this.dialogService.info('Servicios','No se puede borrar"');
                }
-            } );        
+            } );
     }
   }
 
@@ -49,12 +49,12 @@ export class SubscriptionsHomeComponent implements OnInit {
     var x = document.getElementById("tier");
     if (x.style.display === "none") {
         x.style.display = "block";
-    } 
+    }
     var y=document.getElementById("tierName");
     y.focus();
   }
 
-  public Mostrartier(){    
+  public Mostrartier(){
     var tierName = (<HTMLInputElement>document.getElementById("tierName")).value;
     var tierNameComprobacion = tierName;
     tierNameComprobacion= tierNameComprobacion.replace(" ","");
@@ -72,16 +72,16 @@ export class SubscriptionsHomeComponent implements OnInit {
           if(this.dialogService){
             this.dialogService.info('Servicios','Ya existe un tier con ese Nombre');
           }
-       } );   
-   
-       
+       } );
+
+
     } else { this.dialogService.info('Servicios','No puede insertar un tier sin nombre');}
       var x = document.getElementById("tier");
       if (x.style.display === "block") {
-          x.style.display = "none";    
+          x.style.display = "none";
       }
   }
-  
+
 
   public borrar(table: any) {
     // https://ontimizeweb.github.io/docs/v8/guide/service/
@@ -96,7 +96,7 @@ export class SubscriptionsHomeComponent implements OnInit {
           this.avisar();
           // resp.data contains the data retrieved from the server
         } else {
-         
+
         }
       });
       var ontimize = "com.ontimize.web.ngx.jee.seed";

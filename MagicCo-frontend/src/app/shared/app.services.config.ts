@@ -12,6 +12,12 @@ export const SERVICE_CONFIG: Object = {
     'path': '/settings'
   'users': {
    'path': '/users'
+  },
+  'shops': {
+    'path': '/shops'
+  },
+  'regions': {
+    'path': '/regions'
   }
 
 };
