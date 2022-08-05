@@ -68,8 +68,8 @@ export class LandingServicesComponent implements OnInit  {
 
   public openDetail(data: any): void {
     this.dialog.open(LandingServiceDetailComponent, {
-      height: '630px',
-      width: '365px',
+      height: '530px',
+      width: '380px',
       data: data
     });
   }

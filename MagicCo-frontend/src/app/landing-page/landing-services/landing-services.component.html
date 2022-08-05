@@ -2,7 +2,7 @@
 <o-form ignore-default-navigation="yes" show-header="false">
 <div>
   <div class="landing-page-title-container" fxLayout="column">
-    <span class="title_text">{{ 'OUR_SERVICES' | oTranslate }}:</span>
+    <h1 class="title_text">{{ 'OUR_SERVICES' | oTranslate }}:</h1>
   </div>
 
   <o-grid #serviceGrid attr="serviceGrid" service="services" entity="service" keys="id_service"
@@ -20,9 +20,9 @@
           
           <o-image enabled="no" autofit="yes" id='icon' data ="{{list.icon}}" label="{{'ICON' | oTranslate}}" show-controls="no"
              empty-image="assets/images/no-image.png" width="300px"> </o-image>
-          <span><b>{{ list.name }} </b></span>
-          <span><b>{{'PRICE'| oTranslate}}: {{ list.price }} </b></span>
-          <span><b>{{'EFFICIENCY_PERCENTAGE'| oTranslate}}: {{ list.efficiency_percentage }} </b></span>
+          <span class="Titulos"><b>{{ list.name }} </b></span>
+          <span class="Titulos"><i>Price: {{ list.price }}€ </i></span>
+          <span class="Titulos"><i>Efficiency: {{ list.efficiency_percentage }}% </i></span>
           </div>
         </o-grid-item>
       </ng-container>

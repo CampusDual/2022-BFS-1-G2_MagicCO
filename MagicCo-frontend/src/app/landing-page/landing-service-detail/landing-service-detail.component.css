@@ -1,5 +1,26 @@
-.imagenservicio{
+.divservicio{
     width:315px;
-    display:inline-block;
-    float:left;
+    display:inline-block;   
+    margin-bottom:15px;
+}
+.prueba{
+    background-color: #9a9176;
+    border:10px solid #9a9176;
+    border-radius: 10px;
+}
+.contenidoservicio{
+    margin-top:-25px;
+    width:320px;
+    margin-left:-5px;
+    border-radius: 15px;
+    box-shadow:inset 0px 0px 120px #e1dbc9;    
+       
+   
+}
+.pservicios{
+    line-height: 25px;
+    font-size:82%;
+    margin-top:-10px;
+    margin-left:15px;
+    margin-bottom:5px;
 }

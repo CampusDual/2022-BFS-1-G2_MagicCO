@@ -1,30 +1,22 @@
- <mat-dialog-content>
-<div fxLayout="column"  class="service-detail" fxFill>
+<mat-dialog-content  >
+<div fxLayout="column"  class="service-detail" id="fondo" fxFill>
 
  
-      <div>
-        <div class="imagenservicio">
+     <div class="prueba">
+        <div class="divservicio">
         <o-image  id='icon' data ={{data.icon}} label="{{'ICON' | oTranslate}}" show-controls="no"
-        read-only="yes" empty-image="assets/images/no-image.png" ></o-image>
+        read-only="yes" empty-image="assets/images/no-image.png"></o-image>
         </div>
-      <h1 class="servicename"><b>{{ data.name }} {{ data.price }}</b></h1>
-      <mat-divider></mat-divider>
-      <span class="service-type"><i>{{ <data class="bonus"></data> }}</i></span>
-      <mat-divider></mat-divider>
-      <span *ngIf="data.fidelity_points">
-      <mat-icon>email</mat-icon>{{ data.fidelity_points }}
-      </span>
-      <span *ngIf="data.legality_status">
-        <mat-icon>smartphone</mat-icon>{{ data.legality_status }}
-      </span>
-      <span *ngIf="data.description">
-        <mat-icon>home</mat-icon>{{ data.description }}
-      </span>
-
-
- 
-    <span class="service-office">{{ data.name }}</span>
+        <div class=contenidoservicio>
+          <h2 style="margin-left:15px;font-size:125%;"><b>{{ data.name }} - {{ data.price }}€</b></h2>
+          <h6 style="margin-left:15px;line-height:20px;margin-top:-20px;">{{data.description}}</h6>
+          <p class="pservicios">Duration: {{data.duration_time}} día/s</p>     
+          <p class="pservicios">Fidelity Points: {{ data.fidelity_points }}</p>      
+          <p class="pservicios">Legality: {{ data.legality_status }} </p>
+          <p class="pservicios">Magic Status: {{data.magic_status}} </p>
+          <p class="pservicios">Eficiency: {{data.Efficiency_percentage}}</p>
+          <p class="pservicios">Succes: {{data.success_percentage}}</p>
+          <p class="pservicios">Bonus: {{data.bonus}}</p>
+        </div>
     </div>
-
 </div>
-</mat-dialog-content> 

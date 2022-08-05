@@ -6,3 +6,16 @@
     
 }
 
+.Titulos{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:95%;
+}
+.servicio{
+    background-color: #e1dbc9; ;
+}
+
+.title_text{
+    text-align: center;
+    margin:auto;
+    font-family:fantasy;
+}
