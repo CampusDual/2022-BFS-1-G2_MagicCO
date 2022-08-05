@@ -31,14 +31,12 @@ export class ShopsDetailsComponent implements OnInit {
     this.actRoute.params.subscribe(params => {
       this.subscriptionId = params['id'];
       console.log(this.subscriptionId);
-      alert(this.subscriptionId)
-      }); 
+      });
     this.checkSubscriptionStatus();
   }
 
   checkSubscriptionStatus() {
     console.log(this.ssd);
-    alert(this.ssd);
     let dateTime = new Date();
     this.subscriptionTable.getValue();
     // console.log(this.subscriptionTable.dataArray.forEach( item => {
