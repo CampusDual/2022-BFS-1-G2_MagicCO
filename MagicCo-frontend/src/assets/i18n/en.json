@@ -47,5 +47,12 @@
   "REGION": "Region",
   "LONGITUDE":"Longitude",
   "LATITUDE": "Latitude",
-  "START_DATE": "Start date"
+  "ESTABLISHMENT_DATE": "Establishment date",
+  "SUBSCRIPTION_START": "Subscription initial date",
+  "SUBSCRIPTION_END": "Subscription final date",
+  "SUBSCRIPTION_PRICE": "Subscription price",
+  "SUBSCRIPTION_NAME": "Subscription name",
+  "STATUS": "Status"
+
+
 }

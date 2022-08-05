@@ -19,5 +19,5 @@ public class ShopSubscriptionDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_ID_SUBSCRIPTION             = "ID_SUBSCRIPTION";
     public static final String ATTR_START_DATE        = "START_DATE";
     public static final String ATTR_END_DATE          = "END_DATE";
-    public static final String ATTR_ID_STATUS         = "ID_STATUS";
+    public static final String ATTR_STATUS         = "STATUS";
 }

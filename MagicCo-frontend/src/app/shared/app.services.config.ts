@@ -16,6 +16,9 @@ export const SERVICE_CONFIG: Object = {
   },
   'regions': {
     'path': '/regions'
+  },
+  'shopSubscriptions':{
+    'path': '/shopSubscriptions'
   }
 
 };

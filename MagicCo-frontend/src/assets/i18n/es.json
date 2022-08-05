@@ -47,5 +47,10 @@
   "REGION": "Region",
   "LONGITUDE":"Longitude",
   "LATITUDE": "Latitude",
-  "START_DATE": "Fecha inicio"
+  "ESTABLISHMENT_DATE": "Fecha de establecimiento",
+  "SUBSCRIPTION_START": "Fecha de inicio del tier",
+  "SUBSCRIPTION_END": "Fecha final del tier",
+  "SUBSCRIPTION_PRICE": "Precio de tier",
+  "SUBSCRIPTION_NAME": "Nombre de tier",
+  "STATUS": "Estado"
 }
