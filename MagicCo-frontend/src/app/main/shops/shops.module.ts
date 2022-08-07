@@ -7,10 +7,12 @@ import { ShopsHomeComponent } from './shops-home/shops-home.component';
 import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 import { ShopsNewComponent } from './shops-new/shops-new.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ShopReviewsComponent } from './shops-details/shop-reviews/shop-reviews.component';
+import { ReviewRatingComponent } from './shops-details/shop-reviews/review-rating/review-rating.component';
 
 
 @NgModule({
-  declarations: [ShopsHomeComponent, ShopsDetailsComponent, ShopsNewComponent],
+  declarations: [ShopsHomeComponent, ShopsDetailsComponent, ShopsNewComponent, ShopReviewsComponent, ReviewRatingComponent],
   imports: [
     CommonModule,
     ShopsRoutingModule,

@@ -1,0 +1,49 @@
+.list-review .mat-card,
+.mat-sidenav-filters .review-filters {
+  border: 1px solid #dddddd;
+}
+.fill-remaining {
+  width: 100%;}
+
+label {
+    font-weight: 500;
+    color: #242424;
+  }
+
+  .o-list-item.mat-card {
+    box-shadow: none;
+    padding: 16px 22px;
+    margin-bottom: 20px;}
+
+    label,
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 14px;
+      padding: 6px 0;
+    }
+
+.list-review {
+    width: 100%;}
+
+/* .info-iban {
+  label,
+  span {
+    font-size: 18px;
+  }
+} */
+
+.info-review{
+
+    border-right-style: solid;
+    border-right-width: 1.5px;
+    padding: 8px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1.5px;
+  }
+
+  span.date {
+    font-size: 12px;
+  }
+

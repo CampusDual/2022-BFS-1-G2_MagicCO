@@ -9,42 +9,24 @@ import { OBaseTableCellRenderer, OTranslateService } from 'ontimize-web-ngx';
 export class SubscriptionStatusRendererComponent extends OBaseTableCellRenderer implements OnInit {
 
 
-  @ViewChild('statusColor', { read: TemplateRef, static: false }) public statusColor: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);
   }
 
   getCellData(cellvalue: any, rowvalue?: any): string {
+    // will call when status will be changes on numbers
     let newString:string;
-    if(cellvalue === 'Activo') {
-      return newString="!!!!";
-    } else {
-      return newString="____";
+    if(cellvalue === '0') {
+      return newString="Activo";
+    } else if (cellvalue === '1'){
+      return newString="Terminado";
+    }
+    else {
+      return newString="Planificado";
     }
   }
-
-  // getCellData(value: any) {
-  //   const translatedCellData = this.translateService.get(value);
-  //   // const typesList = document.querySelectorAll('.nvd3.nv-legend .nv-series text');
-  //   // for (let i = 0, len = typesList.length; i < len; i++) {
-  //   //   if (typesList[i].innerHTML === translatedCellData) {
-  //   //     const circle: any = typesList[i].parentElement.children[0];
-  //   //     if (circle) {
-  //   //       this.color = circle.style.fill;
-  //   //     }
-  //   //   }
-  //   // }
-  //   return this.translateService.get(value);
-  // }
-
-  // get color(): string {
-  //   return this._color;
-  // }
-
-  // set color(arg: string) {
-  //   this._color = arg;
-  // }
 
   ngOnInit() {
   }

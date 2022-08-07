@@ -1,23 +1,31 @@
+import { ResourceLoader } from '@angular/compiler';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ODateInputComponent, OntimizeService, OTableCellEditorDateComponent, OTableComponent } from 'ontimize-web-ngx';
+import { ODateInputComponent, OListComponent, OntimizeService, OTableCellEditorDateComponent, OTableComponent, OTextInputComponent } from 'ontimize-web-ngx';
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-shops-details',
   templateUrl: './shops-details.component.html',
   styleUrls: ['./shops-details.component.css']
 })
+
+
 export class ShopsDetailsComponent implements OnInit {
 
-  @ViewChild('shopSubscriptionTable', { static: false })
-  private subscriptionTable: OTableComponent;
+  private routeSub: Subscription;
+  shopId: number;
 
-  @ViewChild('ssd', { static: false })
-  private ssd: OTableCellEditorDateComponent;
+  public currentItem;
 
-  public subscriptionId;
+  @ViewChild('idShop', { static: false })
+  public idShop: OTextInputComponent;
+
+  @ViewChild('reviewGrid', { static: false })
+  private reviewGrid: OListComponent;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     @Inject(OntimizeService) private service: OntimizeService,
     private actRoute: ActivatedRoute
@@ -29,6 +37,9 @@ export class ShopsDetailsComponent implements OnInit {
 
   ngAfterViewInit(){
 
+    this.shopId = this.idShop.getValue();
+
+    console.log(this.shopId);
   }
 
   checkSubscriptionStatus() {
