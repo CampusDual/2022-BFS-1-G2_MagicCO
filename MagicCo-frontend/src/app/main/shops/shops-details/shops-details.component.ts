@@ -21,9 +21,6 @@ export class ShopsDetailsComponent implements OnInit {
   @ViewChild('idShop', { static: false })
   public idShop: OTextInputComponent;
 
-  @ViewChild('reviewGrid', { static: false })
-  private reviewGrid: OListComponent;
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -32,14 +29,17 @@ export class ShopsDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.activatedRoute.params.subscribe((params) => {
+      this.shopId = Number(params["id_shop"]);
+      console.log ('this ' + this.shopId);
+    });
   }
 
   ngAfterViewInit(){
 
-    this.shopId = this.idShop.getValue();
+    this.currentItem = this.idShop.getValue();
 
-    console.log(this.shopId);
+    console.log('currentItem ' + this.currentItem);
   }
 
   checkSubscriptionStatus() {

@@ -4,47 +4,54 @@
       columns="name;region;id_review;review_text;stars;id_shop;review_date;id_client;client_name;client_email;review_title;review_id_shop"
       col="12" show-page-size="false" orderable="false" quick-filter="true" search="yes" show-footer="true" pageable="no"
       controls="false" gutter-size="1px" detail-mode="none" fill="outline" justify-content="flex-end">
-      <p>{{item}}</p>
-      <o-button (click)="ngAfterViewInit()" label="{{ 'LOGIN_REGISTER' | oTranslate }}" layout-padding color="accent"></o-button>
-      <mat-card *ngFor="let review of reviewGrid.dataArray; trackBy:trackByIndex" o-list-item>
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="initial" fxFlex.lt-lg="100"
-            ngClass.lt-lg="border-bottom" ngClass="border-right">
-            <div fxLayout="column" fxLayoutAlign="start start" fxFlexFill>
+      <o-button (click)="ngAfterViewInit()" label="Filtrar por id_shop" layout-padding color="accent"></o-button>
+      <mat-card *ngFor="let review of reviewGrid.dataArray; trackBy:trackByIndex">
+        <div fxLayout="row" fxLayoutAlign="center center" id="Servicios" servicio>
+          <!-- <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex fxFlex.lt-lg="100"
+            ngClass.lt-lg="border-bottom" ngClass="border-right"> -->
+            <div class="star-column" fxLayout="column" fxLayoutAlign="start start" fxFlex="20" fxFlexOffset="1" fxLayoutGap="14px">
               <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
                 <span class="date">{{ review.review_date | date:'longDate' }}</span>
               </div>
-              <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+              <div  *ngIf="review.stars" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                <!-- <span>{{ review.stars}}</span> -->
+                <app-review-rating [rating]="review.stars"></app-review-rating>
               </div>
+              <!-- <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+              </div> -->
             </div>
-          </div>
+          <!-- </div> -->
 
-          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="14px" fxFlex="15" fxFlex.lt-lg="100"
+          <!-- <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="14px" fxFlex="15" fxFlex.lt-lg="100"
           ngClass.lt-lg="border-bottom" ngClass="border-right">
-            <div fxLayout="row wrap" fxLayoutAlign="row" fxLayoutGap="12px">
+            <div class="Titulos" fxLayout="row wrap" fxLayoutAlign="row" fxLayoutGap="12px">
               <div *ngIf="review.stars" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
-                <span>{{ review.stars}}</span>
+                <app-review-rating [rating]="review.stars"></app-review-rating>
               </div>
             </div>
             <div>
               <span> </span>
-              <app-review-rating class="text-right" [rating]="review.stars"></app-review-rating>
+
             </div>
-          </div>
+          </div> -->
 
 
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex.lt-lg="100" class="info-iban">
-            <span> {{ review.client_name }}</span>
+          <!-- <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex.lt-lg="100" class="info-iban">
+            <span class="Titulos" > {{ review.client_name }}</span>
             <div fxLayout="row" fxLayoutAlign="row" fxLayoutGap="12px">
-              <span>{{ review.client_email}} </span>
+              <span class="date">{{ review.client_email}} </span>
             </div>
-          </div>
+          </div> -->
 
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="120" fxFlex.lt-lg="100" class="balance-review">
-            <span> {{ review.review_title }}</span>
-            <div fxLayout="row" fxLayoutAlign="end" fxFill fxLayoutGap="12px">
-              <span class="text">{{ review.review_text }} </span>
-            </div>
+          <div fxLayout="column" fxFlex="end" fxFill fxLayoutGap="1px">
+            <p><span id="name"> {{ review.client_name }} </span>
+            <span id="address"> {{ review.client_email}} </span>
+          </p>
+
+            <span class="Titulos"> {{ review.review_title }}</span>
+              <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="1px">
+                <span class="title_text">{{ review.review_text }} </span>
+              </div>
           </div>
         </div>
 
@@ -61,8 +68,11 @@
             <div (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="o-card-menu-item mat-elevation-z1 servicio">
             <span class="Titulos" id="reviews"><b>review_id_shop {{ list.review_id_shop }} </b></span>
             <span class="Titulos"><b>{{ list.client_name }} </b></span>
-            <span class="Titulos"><i>Stars: {{ list.stars }} </i></span>
+            <span class="Titulos"><i>Stars: {{ list.stars }} </i>
+              <app-review-rating [rating]="list.stars"></app-review-rating>
+            </span>
             <span class="Titulos"><i>{{ list.review_title }} </i></span>
+
             </div>
           </o-list-item>
         </ng-container>

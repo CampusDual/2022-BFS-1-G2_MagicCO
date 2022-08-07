@@ -31,6 +31,7 @@
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
     "@angular/upgrade": "^8.2.14",
+    "@fortawesome/fontawesome-free": "^5.13.1",
     "clean": "^4.0.2",
     "core-js": "^3.6.4",
     "ngx-material-timepicker": "5.4.3",

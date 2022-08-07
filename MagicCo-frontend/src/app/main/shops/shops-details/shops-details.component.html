@@ -1,5 +1,6 @@
-<o-form #shopDetailsForm service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no" fxFill>
-  <o-button (click)="ngAfterViewInit()" label="{{ 'LOGIN_REGISTER' | oTranslate }}" layout-padding color="accent"></o-button>
+<o-form #shopDetailsForm service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no" fxFill
+onDataLoaded="ngAfterViewInit()">
+  <o-button (click)="ngAfterViewInit()" label="Mandar id_shop a review component" layout-padding color="accent"></o-button>
   <o-row-collapsible expanded="yes" description="This is a collapsible row">
       <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex="70" appearance='outline'>
         <o-row>
@@ -59,7 +60,7 @@
       </o-column>
     </mat-tab>
     <mat-tab label="{{ 'REVIEWS' | oTranslate }}">
-      <app-shop-reviews [shopId]="shopId"></app-shop-reviews>
+      <app-shop-reviews [item]="currentItem"></app-shop-reviews>
     </mat-tab>
   </mat-tab-group>
 </o-form>

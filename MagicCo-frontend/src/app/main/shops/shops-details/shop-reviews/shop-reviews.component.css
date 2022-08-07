@@ -1,49 +1,44 @@
-.list-review .mat-card,
-.mat-sidenav-filters .review-filters {
-  border: 1px solid #dddddd;
-}
-.fill-remaining {
-  width: 100%;}
-
-label {
-    font-weight: 500;
-    color: #242424;
-  }
-
-  .o-list-item.mat-card {
-    box-shadow: none;
-    padding: 16px 22px;
-    margin-bottom: 20px;}
-
-    label,
-    span {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      font-size: 14px;
-      padding: 6px 0;
-    }
-
-.list-review {
-    width: 100%;}
-
-/* .info-iban {
-  label,
-  span {
-    font-size: 18px;
-  }
-} */
-
-.info-review{
-
-    border-right-style: solid;
-    border-right-width: 1.5px;
-    padding: 8px 0;
-    border-bottom-style: solid;
-    border-bottom-width: 1.5px;
-  }
+.star-column {
+  max-width: 10% !important; }
 
   span.date {
     font-size: 12px;
   }
 
+#Servicios:hover{
+  opacity:98%;
+  /* border: 2px solid yellow; */
+  /* box-shadow:2px -2px 10px gold; */
+  transform: scaleY(1.04) scaleX(1.04);
+}
+
+.Titulos{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration-style: double;
+    font-size:95%;
+}
+.servicio{
+    background-color: #e1dbc9;
+}
+
+.title_text{
+    text-align: justify;
+    margin:auto;
+    font-size: 14px;
+    /* font-family:fantasy; */
+}
+
+
+#name{
+  font-size:18px;
+  float:left;
+  color:rgb(31, 47, 170);
+  }
+
+#address{
+  font-size:12px;
+  float:right;
+  text-align:right;
+  width:300px;
+  color:rgb(31, 47, 170);
+  }

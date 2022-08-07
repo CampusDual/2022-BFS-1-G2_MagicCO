@@ -48,7 +48,7 @@ export class ShopsHomeComponent implements OnInit {
   }
 
   setCurrentUserIdFilter() {
-    console.log(this.shopsTable);
+    // console.log(this.shopsTable);
 
 
     // this.shopsTable.queryData(basicExpr);

@@ -16,14 +16,13 @@ export class SubscriptionStatusRendererComponent extends OBaseTableCellRenderer 
   }
 
   getCellData(cellvalue: any, rowvalue?: any): string {
-    // will call when status will be changes on numbers
+    // will call when "status" will be changed on numbers
     let newString:string;
-    if(cellvalue === '0') {
+    if (cellvalue === '0') {
       return newString="Activo";
     } else if (cellvalue === '1'){
       return newString="Terminado";
-    }
-    else {
+    } else if (cellvalue === '2') {
       return newString="Planificado";
     }
   }

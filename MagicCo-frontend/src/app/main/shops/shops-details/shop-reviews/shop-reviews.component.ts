@@ -8,7 +8,7 @@ import { OTextInputComponent, OListComponent } from 'ontimize-web-ngx';
 })
 export class ShopReviewsComponent implements OnInit {
 
-  @Input() shopId: number;
+  @Input() item: number;
 
   @ViewChild('idShop', { static: false })
   private idShop: OTextInputComponent;
@@ -19,13 +19,13 @@ export class ShopReviewsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // alert(this.reviews);
+    this.ngAfterViewInit();
   }
 
   ngAfterViewInit(){
-      console.log("    " + this.shopId)
+      console.log("    " + this.item);
       this.reviewGrid.queryData({
-        'id_shop': this.shopId
+        'id_shop': this.item
       })
 
   }
