@@ -8,6 +8,9 @@ import { OTextInputComponent, OListComponent } from 'ontimize-web-ngx';
 })
 export class ShopReviewsComponent implements OnInit {
 
+  count: number;
+  score: number;
+
   @Input() item: number;
 
   @ViewChild('idShop', { static: false })
@@ -33,4 +36,25 @@ export class ShopReviewsComponent implements OnInit {
   trackByIndex(index: number, obj: any): any {
     return index;
   }
+
+
+//Call the following functions in html:
+//<div *ngIf="!isNaN(getScoreAvgReviews())" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+//<app-review-rating [rating]="getScoreAvgReviews()"></app-review-rating>
+//</div>
+
+  getScoreAvgReviews() {
+    this.count = 0;
+    this.score = 0;
+    this.reviewGrid.dataArray.forEach((rate) => {
+      this.score += rate.stars;
+      this.count++;
+    });
+    return this.score / this.count;
+  }
+
+  isNaN(value: number) {
+    return Number.isNaN(value);
+  }
+
 }

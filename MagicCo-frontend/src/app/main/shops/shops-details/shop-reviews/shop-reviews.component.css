@@ -5,14 +5,12 @@
     font-size: 12px;
   }
 
-#Servicios:hover{
+#ReviewCard:hover{
   opacity:98%;
-  /* border: 2px solid yellow; */
-  /* box-shadow:2px -2px 10px gold; */
-  transform: scaleY(1.04) scaleX(1.04);
+  transform: scaleY(1.02) scaleX(1.02);
 }
 
-.Titulos{
+.titles{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-decoration-style: double;
     font-size:95%;

@@ -15,11 +15,16 @@ export class ShopsDetailsComponent implements OnInit {
 
   private routeSub: Subscription;
   shopId: number;
+  public currentShopName;
 
   public currentItem;
 
+
   @ViewChild('idShop', { static: false })
   public idShop: OTextInputComponent;
+
+  @ViewChild('shopName', { static: false })
+  public shopName: OTextInputComponent;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,6 +34,8 @@ export class ShopsDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    // revise the utlity of this function
     this.activatedRoute.params.subscribe((params) => {
       this.shopId = Number(params["id_shop"]);
       console.log ('this ' + this.shopId);
@@ -36,16 +43,14 @@ export class ShopsDetailsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-
     this.currentItem = this.idShop.getValue();
-
+    this.currentShopName = this.shopName.getValue();
     console.log('currentItem ' + this.currentItem);
   }
 
   checkSubscriptionStatus() {
 
   }
-
 
 
 }
