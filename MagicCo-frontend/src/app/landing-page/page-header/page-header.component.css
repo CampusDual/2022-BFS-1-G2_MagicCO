@@ -1,0 +1,27 @@
+.logo img{
+  height: 50px;
+}
+
+button.mat-raised-button{
+  margin: 0 10px !important;
+}
+
+.menu{
+  display:inline-block;
+  margin: auto 45px;
+  text-align: center;
+}
+
+.menu a{
+  display:inline-block;
+  padding: 0 10px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  color: #51472c;
+  transition: .3s ease-in-out;
+}

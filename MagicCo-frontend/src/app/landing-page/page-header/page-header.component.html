@@ -1,12 +1,17 @@
 <mat-toolbar color="primary" class="mat-elevation-z0">
-  <span style="flex: auto"></span>
+  <a href="http://localhost:4299/" class="logo"><img src="../../../assets/images/logo menu.svg"/></a>
+
+  <nav class="menu" style="flex: auto">
+    <a href="#" class="services">Services</a>
+    <a href="#" class="contact">Tiers</a>
+  </nav>
   <!-- <mat-chip-list color="primary">
     <mat-chip (click)="loginPrincipal()" color="primary">{{ 'LOGIN_REGISTER' | oTranslate }}</mat-chip>
   </mat-chip-list>
   <o-button (click)="loginPrincipal()" label="{{ 'LOGIN_REGISTER' | oTranslate }}" layout-padding color="primary"></o-button>
   <o-button (click)="loginPrincipal()" label="{{ 'LOGIN_REGISTER' | oTranslate }}" layout-padding color="accent"></o-button> -->
-  <button (click)="goToRegister()" mat-raised-button color="accent" type="submit">{{ 'REGISTER' | oTranslate }}</button>
-  <button (click)="goToLogin()" mat-raised-button color="accent" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+  <button class="button" (click)="goToRegister()" mat-raised-button color="accent" type="submit">{{ 'REGISTER' | oTranslate }}</button>
+  <button class="button" (click)="goToLogin()" mat-raised-button color="accent" type="submit">{{ 'LOGIN' | oTranslate }}</button>
   <!-- <button (click)="loginPrincipal()" mat-raised-button color="primary" type="submit">{{ 'LOGIN_REGISTER' | oTranslate }}</button>
   <button (click)="loginPrincipal()" mat-raised-button color="warn" type="submit">{{ 'LOGIN_REGISTER' | oTranslate }}</button> -->
 
