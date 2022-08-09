@@ -10,6 +10,15 @@ export const SERVICE_CONFIG: Object = {
   },
   'users': {
    'path': '/users'
+  },
+  'shops': {
+    'path': '/shops'
+  },
+  'regions': {
+    'path': '/regions'
+  },
+  'shopSubscriptions':{
+    'path': '/shopSubscriptions'
   }
 
 };
