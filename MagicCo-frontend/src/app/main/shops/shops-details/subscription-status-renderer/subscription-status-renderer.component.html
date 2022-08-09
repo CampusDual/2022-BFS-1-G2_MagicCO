@@ -1,0 +1,11 @@
+<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue" >
+  <span *ngIf="cellvalue === 'Terminado' " style="color:red;" fxLayoutAlign="center center">
+    <mat-icon>cancel</mat-icon> {{cellvalue}}
+  </span>
+  <span *ngIf="cellvalue === 'Activo'" style="color:green" fxLayoutAlign="center center">
+    <mat-icon>stars</mat-icon> {{cellvalue}}
+  </span>
+  <span *ngIf="cellvalue === 'Planificado'" style="color:grey" fxLayoutAlign="center center">
+    <mat-icon>list_alt</mat-icon> {{cellvalue}}
+  </span>
+</ng-template>

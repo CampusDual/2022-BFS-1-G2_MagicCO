@@ -1,0 +1,42 @@
+.star-column {
+  max-width: 10% !important; }
+
+  span.date {
+    font-size: 12px;
+  }
+
+#ReviewCard:hover{
+  opacity:98%;
+  transform: scaleY(1.02) scaleX(1.02);
+}
+
+.titles{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration-style: double;
+    font-size:95%;
+}
+.servicio{
+    background-color: #e1dbc9;
+}
+
+.title_text{
+    text-align: justify;
+    margin:auto;
+    font-size: 14px;
+    /* font-family:fantasy; */
+}
+
+
+#name{
+  font-size:18px;
+  float:left;
+  color:rgb(31, 47, 170);
+  }
+
+#address{
+  font-size:12px;
+  float:right;
+  text-align:right;
+  width:300px;
+  color:rgb(31, 47, 170);
+  }

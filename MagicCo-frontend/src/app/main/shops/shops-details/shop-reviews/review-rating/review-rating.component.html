@@ -1,0 +1,37 @@
+
+
+<div *ngIf="rating < 1.5">
+  <span class="fa fa-star checked"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+</div>
+<div *ngIf="rating >= 1.5 && rating < 2.5">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+</div>
+<div *ngIf="rating >= 2.5 && rating < 3.5">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="far fa-star"></span>
+  <span class="far fa-star"></span>
+</div>
+<div *ngIf="rating >= 3.5 && rating < 4.5">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="far fa-star"></span>
+</div>
+<div *ngIf="rating >= 4.5 && rating <= 5">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+</div>

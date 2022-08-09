@@ -52,7 +52,8 @@
   "SUBSCRIPTION_END": "Subscription final date",
   "SUBSCRIPTION_PRICE": "Subscription price",
   "SUBSCRIPTION_NAME": "Subscription name",
-  "STATUS": "Status"
+  "STATUS": "Status",
+  "REVIEWS": "Reviews"
 
 
 }

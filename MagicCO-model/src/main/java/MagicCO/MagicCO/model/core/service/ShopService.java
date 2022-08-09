@@ -55,4 +55,9 @@ public class ShopService implements IShopService {
     public EntityResult shopSubscriptionDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.shopDao, keyMap);
     }
+
+    @Override
+    public EntityResult shopReviewQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.shopDao, keyMap, attrList, ShopDao.QUERY_SHOW_REVIEWS);
+    }
 }

@@ -52,5 +52,6 @@
   "SUBSCRIPTION_END": "Fecha final del tier",
   "SUBSCRIPTION_PRICE": "Precio de tier",
   "SUBSCRIPTION_NAME": "Nombre de tier",
-  "STATUS": "Estado"
+  "STATUS": "Estado",
+  "REVIEWS": "Reseñas"
 }
