@@ -1,15 +1,17 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Component, Inject, OnInit, Injector } from '@angular/core';
+import { Component, Inject, OnInit, Injector, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, DialogService, Observable, ODialogConfig, OntimizeService, OValueChangeEvent } from 'ontimize-web-ngx';
 import { RegisterService } from './register.service';
 import { User } from './user';
 
+
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
+  encapsulation: ViewEncapsulation.None
 
 })
 
