@@ -41,5 +41,18 @@
   "SUBSCRIPTIONS": "Subscriptions",
   "OUR_SERVICES": "Our services",
   "REGISTER": "Register",
-  "DETAILS": "Details"
+  "DETAILS": "Details",
+  "SHOPS": "Shops",
+  "SHOP_NAME": "Shop name",
+  "REGION": "Region",
+  "LONGITUDE":"Longitude",
+  "LATITUDE": "Latitude",
+  "ESTABLISHMENT_DATE": "Establishment date",
+  "SUBSCRIPTION_START": "Subscription initial date",
+  "SUBSCRIPTION_END": "Subscription final date",
+  "SUBSCRIPTION_PRICE": "Subscription price",
+  "SUBSCRIPTION_NAME": "Subscription name",
+  "STATUS": "Status"
+
+
 }

@@ -41,5 +41,16 @@
   "SUBSCRIPTIONS":"Tiers",
   "OUR_SERVICES": "Nuestros servicios",
   "REGISTER": "Registrarse",
-  "DETAILS": "Detalles"
+  "DETAILS": "Detalles",
+  "SHOPS": "Tiendas",
+  "SHOP_NAME": "Nombre de la tienda",
+  "REGION": "Region",
+  "LONGITUDE":"Longitude",
+  "LATITUDE": "Latitude",
+  "ESTABLISHMENT_DATE": "Fecha de establecimiento",
+  "SUBSCRIPTION_START": "Fecha de inicio del tier",
+  "SUBSCRIPTION_END": "Fecha final del tier",
+  "SUBSCRIPTION_PRICE": "Precio de tier",
+  "SUBSCRIPTION_NAME": "Nombre de tier",
+  "STATUS": "Estado"
 }

@@ -1,0 +1,28 @@
+<o-form #formform service="shops" entity="shop" keys="id_shop" header-actions="R" undo-button="no" show-header="no" show-header-navigation="no">
+  <div> <o-button (click)="back()" label="Cancelar" color="accent"></o-button>
+        <o-button (click)="onSave()" label="Guardar" mat-raised-button color="accent"
+        style="margin-left:500px" display="block"></o-button></div>
+  <o-row>
+    <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="name" label="{{'SHOP_NAME' | oTranslate}}" fxFlex="40" required="yes"></o-text-input>
+        <o-combo attr="region" label="{{'REGION' | oTranslate}}" class="input-padding" fxFlex="20" service="regions"
+           entity="region" keys="id_region" columns="region_name"
+           visible-columns="region_name" value-column="region_name"></o-combo>
+        <o-date-input attr="start_date" label="{{'START_DATE' | oTranslate}}" fxFlex="20"></o-date-input>
+      </o-row>
+      <o-row>
+        <o-real-input attr="longitude" label="{{'LONGITUDE' | oTranslate}}" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
+          class="input-padding" fxFlex="50"></o-real-input>
+        <o-real-input attr="latitude" label="{{'LATITUDE' | oTranslate}}" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
+          fxFlex="50"></o-real-input>
+        <o-text-input #textInput attr="user_id" enabled="no" hidden></o-text-input>
+
+      </o-row>
+      <o-row>
+          <o-textarea-input attr="description" label="{{'DESCRIPTION' | oTranslate}}" fxFlex></o-textarea-input>
+      </o-row>
+    </o-column>
+  </o-row>
+
+</o-form>
