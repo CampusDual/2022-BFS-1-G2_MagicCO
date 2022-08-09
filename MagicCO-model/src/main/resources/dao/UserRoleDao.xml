@@ -12,6 +12,17 @@
 		<Column>usro_id</Column>
 	</UpdateKeys>
 	<Queries>
+		<Query id="role">
+			<Sentence>
+				<![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM ${mainschema}.TUSER_ROLE
+                    #WHERE#
+                    #ORDER#
+                ]]>
+			</Sentence>
+		</Query>
 		<Query id="login">
 			<Sentence>
                 <![CDATA[
