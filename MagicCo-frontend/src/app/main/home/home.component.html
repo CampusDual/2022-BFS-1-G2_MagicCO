@@ -1,5 +1,24 @@
 <div fxLayout="row" layout-padding fxLayoutAlign="center center">
-  <p>
-    Ontimize web seed application home component
-  </p>
+
+  <o-chart fxFlex type="pie" service="services" entity="service"
+  x-axis="name" y-axis="price" query-on-init="yes" [chart-parameters]="chartParameters"
+  y-label="Price">
+  </o-chart>
+</div>
+
+<div fxLayout="row" layout-padding fxLayoutAlign="center center">
+  <o-chart fxFlex type="discreteBar" service="subscriptions" entity="subscriptionService"
+  x-axis="subscription_name" y-axis="subscription_price" query-on-init="yes"
+  x-label="{{'SUBSCRIPTION_PRICE'}} | oTranslate" y-label="Amount (€)"
+  labelType="value">
+  </o-chart>
+</div>
+
+<div fxLayout="row" layout-padding fxLayoutAlign="center center">
+  <o-chart fxFlex type="multiBarHorizontalChart" service="services" entity="service"
+  x-axis="name" y-axis="fidelity_points;price" query-on-init="yes"
+  [chart-parameters]="chartBarParam"
+  x-label="{{'SUBSCRIPTION_PRICE'}} | oTranslate"
+  >
+  </o-chart>
 </div>

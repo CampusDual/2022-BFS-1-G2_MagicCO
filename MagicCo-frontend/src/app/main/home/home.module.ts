@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { ChartService, OChartModule } from 'ontimize-web-ngx-charts';
 
 import { SharedModule } from '../../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
@@ -9,7 +10,8 @@ import { HomeComponent } from './home.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    OChartModule
   ],
   declarations: [
     HomeComponent
