@@ -14,6 +14,8 @@ public class SubscriptionDao extends OntimizeJdbcDaoSupport {
     public static final String NAME_SUBSCRIPTION = "NAME";
     public static final String PRICE_SUBSCRIPTION = "PRICE";
     public static final String DISCOUNT = "DISCOUNT";
+    public static final String ICON = "ICON";
+
     //CAMBIOS
     public static final String QUERY_SHOW_DETAILS = "details";
     //SERVICE

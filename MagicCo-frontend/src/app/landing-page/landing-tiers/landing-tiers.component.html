@@ -1,0 +1,42 @@
+<div class="tier-container">
+
+  <div id="tiers-toggle">
+    <o-button-toggle-group attr="toggleGroup" layout="row" multiple="no" value="year" layout-padding>
+      <o-button-toggle attr="toggle1" label="Mensual" value="month" (onChange)="prices($event)"></o-button-toggle>
+      <o-button-toggle attr="toggle2" label="Anual" value="year" (onChange)="prices($event)"></o-button-toggle>
+    </o-button-toggle-group>
+  </div>
+
+  <div id="tiers-prices">
+    <o-grid #tiers attr="tiers" service="subscriptions" entity="subscription" keys="id_subscription"
+        columns="id_subscription;name;price;icon" title="TIERS"
+        [cols]="3" query-rows="3" show-page-size="false"
+        orderable="yes" quick-filter="false"
+        sort-column="id_subscription" controls="false" refresh-button="false"
+        pagination-controls="false" show-footer="false">
+        <ng-container *ngFor="let list of tiers.dataArray">
+          <o-grid-item>
+            <o-column layout-padding class="container-item">
+              <o-image data ="{{list.icon}}" show-controls="no"
+              read-only="yes" empty-image="assets/images/no-image.png"></o-image>
+              <h3 class="tier-title">{{ list.name }}</h3>
+              <o-list #tiersServices service="subscriptions" entity="subscriptionService" parent-keys="id_subscription" keys="id_subscription_service"
+              columns="id_subscription_service;id_subscription;service_name;subscription_price;service_price"
+              quick-filter="false" refresh-button="false" insert-button="false"
+              insert-button-floatable="false" delete-button="false"
+              selectable="false" dense="false" detail-button-in-row="false"
+              edit-button-in-row="false" detail-mode="none">
+                <mat-card *ngFor="let listservices of tiersServices.dataArray">
+                  <mat-card-subtitle>{{ listservices.service_name }}</mat-card-subtitle>
+                </mat-card>
+              </o-list>
+              <span *ngIf="planAnnual" class="price-tier">{{ list.price * (100 - 20) / 100}}€ <span class="price-subtitle">mes</span></span>
+              <span *ngIf="!planAnnual" class="price-tier">{{ list.price }}€ <span class="price-subtitle">mes</span></span>
+            </o-column>
+
+          </o-grid-item>
+        </ng-container>
+    </o-grid>
+  </div>
+
+</div>
