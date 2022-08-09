@@ -10,6 +10,7 @@ export const SERVICE_CONFIG: Object = {
   },
   "settings":{
     'path': '/settings'
+  },
   'users': {
    'path': '/users'
   },

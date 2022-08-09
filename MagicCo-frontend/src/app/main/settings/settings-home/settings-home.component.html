@@ -1,21 +1,22 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start">
-  <o-form #oForm attr="userdata" title="SETTINGS" service="users" entity="user" keys="USER_" columns="NAME;SURNAME;NIF;EMAIL;PASSWORD;LASTPASSWORDUPDATE" header-actions="R;I;U">
-    <o-column layout-gap="24px" title="{{ 'FILTERS' | oTranslate }}">
+  <o-form #oForm attr="userdata" title="SETTINGS" service="users" entity="user" keys="USER_" columns="NAME;SURNAME;NIF;EMAIL;PASSWORD;LASTPASSWORDUPDATE"
+  visible-columns="NAME;SURNAME;NIF;EMAIL;PASSWORD;LASTPASSWORDUPDATE" header-actions="R;I;U">
+    <o-column layout-gap="24px">
       <o-row layout-gap="26px">
-        <o-row title="USERNAME" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
+        <o-row title="NAME class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
           <o-text-input attr="NAME" label="Name" read-only="no" required="yes"></o-text-input>
         </o-row>
       </o-row>
       <o-column layout-gap="24px">
       <o-row layout-gap="26px">
-        <o-row title="USERSURNAME" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
+        <o-row title="SURNAME" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
           <o-text-input attr="SURNAME" label="Surname" read-only="no" required="yes"></o-text-input>
         </o-row>
       </o-row>
       </o-column>
       <o-column layout-gap="24px">
       <o-row>
-        <o-row title="USEREMAIL" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
+        <o-row title="EMAIL" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
           <o-email-input attr="EMAIL" label="Email"  read-only="no" required="yes"></o-email-input>
         </o-row>
       </o-row>
