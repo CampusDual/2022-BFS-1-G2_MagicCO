@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { OChartModule } from 'ontimize-web-ngx-charts';
 import { PageHeaderComponent } from '../landing-page/page-header/page-header.component';
 
 
@@ -17,7 +18,8 @@ export function showNumberAsPercentsFunction (rowData: Array<any>): number {
   ],
   exports: [
     CommonModule,
-    PageHeaderComponent
+    PageHeaderComponent,
+    OChartModule
   ]
 })
 export class SharedModule { }
