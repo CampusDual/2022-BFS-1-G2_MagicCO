@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { LandingServiceDetailComponent } from './landing-service-detail/landing-service-detail.component';
 import { LandingTiersComponent } from './landing-tiers/landing-tiers.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
