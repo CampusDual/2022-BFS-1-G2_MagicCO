@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
     protected dialogService: DialogService
   ) {
       this.service = this.injector.get(OntimizeService);
+
     }
 
   ngOnInit() {
@@ -59,13 +60,12 @@ export class RegisterComponent implements OnInit {
     this.service.insert(data,'user')
     .subscribe(resp => {
       if (resp.code === 0) {
-        console.log('Success: ', data);
+        this.addUserRole();
         this.router.navigate(['../../', 'main']);
-
         // resp.data contains the data retrieved from the server
-
       } else {
         alert('Impossible to delete data!');
+        localStorage.clear();
       }
     },
       (error: HttpErrorResponse) => {
@@ -78,10 +78,9 @@ export class RegisterComponent implements OnInit {
           }
         }
     });
-    localStorage.clear();
   }
 
- createForm() {
+  createForm() {
     //console.log('method : createForm')
     return new FormGroup({
       username: new FormControl('', [Validators.minLength(3), Validators.maxLength(25)]),
@@ -108,6 +107,33 @@ export class RegisterComponent implements OnInit {
         this.dialogService.error('Error', 'Las contraseñas no coinciden', config);
       }
     }
+  }
+
+  addUserRole(){
+    const confRole = this.service.getDefaultServiceConfiguration('userRoles');
+    this.service.configureService(confRole);
+    this.service.insert(
+      {
+        "user_": this.registerForm.value.username,
+        "id_rolename": 2
+      },'userRole')
+    .subscribe(resp => {
+      if (resp.code === 0) {
+        localStorage.clear();
+      } else {
+        localStorage.clear();
+      }
+    },
+      (error: HttpErrorResponse) => {
+        if(error.status == 500){
+          if (this.dialogService) {
+            const config: ODialogConfig = {
+              okButtonText: 'Aceptar'
+            };
+            this.dialogService.error('Error', 'No se puede añadir el role del usuario', confRole);
+          }
+        }
+    });
   }
 }
 

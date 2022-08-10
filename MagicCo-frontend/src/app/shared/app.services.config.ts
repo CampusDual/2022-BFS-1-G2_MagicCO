@@ -19,6 +19,9 @@ export const SERVICE_CONFIG: Object = {
   },
   'shopSubscriptions':{
     'path': '/shopSubscriptions'
+  }  ,
+  'userRoles':{
+    'path': '/userRoles'
   }
 
 };
