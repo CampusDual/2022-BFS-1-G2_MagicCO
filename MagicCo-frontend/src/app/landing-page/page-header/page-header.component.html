@@ -2,8 +2,8 @@
   <a href="http://localhost:4299/" class="logo"><img src="../../../assets/images/logo menu.svg"/></a>
 
   <nav class="menu" style="flex: auto">
-    <a href="#" class="services">Services</a>
-    <a href="#" class="contact">Tiers</a>
+    <span class="services" (click)="buttonClick('services')">Services</span>
+    <span class="contact" (click)="buttonClick('tiers')">Tiers</span>
   </nav>
   <!-- <mat-chip-list color="primary">
     <mat-chip (click)="loginPrincipal()" color="primary">{{ 'LOGIN_REGISTER' | oTranslate }}</mat-chip>
