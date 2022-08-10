@@ -65,6 +65,7 @@ export class RegisterComponent implements OnInit {
         // resp.data contains the data retrieved from the server
       } else {
         alert('Impossible to delete data!');
+        localStorage.clear();
       }
     },
       (error: HttpErrorResponse) => {
