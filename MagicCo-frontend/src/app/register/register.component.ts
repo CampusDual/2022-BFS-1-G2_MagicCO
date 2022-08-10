@@ -135,6 +135,11 @@ export class RegisterComponent implements OnInit {
         }
     });
   }
+
+  ngOnDestroy(){
+    localStorage.clear();
+  }
 }
+
 
 
