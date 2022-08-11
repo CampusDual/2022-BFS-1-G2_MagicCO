@@ -33,11 +33,30 @@
 .container-item {
   border: 3px solid #9a9176;
   border-radius: 10px;
+  height: 350px;
+  width: 85%;
+  cursor: auto;
 }
 
 .tier-title{
   text-align: center;
   text-transform: uppercase;
+}
+
+.services-tier{
+  height: 100px;
+  list-style: none;
+}
+
+
+
+.services-tier li:before {
+  content: "\e876"; /* FontAwesome Unicode */
+  font-family: 'Material Icons';
+  color: #9a9176;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
 }
 
 .price-tier{

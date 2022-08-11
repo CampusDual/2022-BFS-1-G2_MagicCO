@@ -23,6 +23,10 @@ export class PageHeaderComponent implements OnInit {
     this.router.navigate(['../../register']);
   }
 
+  buttonClick(fragment: string): void{
+    this.router.navigateByUrl('#' + fragment);
+  }
+
 
 
 }

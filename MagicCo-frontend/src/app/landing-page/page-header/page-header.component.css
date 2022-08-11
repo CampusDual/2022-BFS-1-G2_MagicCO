@@ -12,16 +12,17 @@ button.mat-raised-button{
   text-align: center;
 }
 
-.menu a{
+.menu span{
   display:inline-block;
   padding: 0 10px;
   color: #FFF;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.menu a:hover{
+.menu span:hover{
   color: #51472c;
   transition: .3s ease-in-out;
 }

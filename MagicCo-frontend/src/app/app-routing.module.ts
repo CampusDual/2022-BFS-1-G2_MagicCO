@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 import {LandingPageComponent } from './landing-page/landing-page.component';
 import { AppComponent } from './app.component';
@@ -18,8 +18,9 @@ export const routes: Routes = [
 
 ];
 
-const opt = {
-  enableTracing: false
+const opt: ExtraOptions = {
+  enableTracing: false,
+  anchorScrolling: 'enabled'
   // true if you want to print navigation routes
 };
 

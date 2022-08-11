@@ -1,5 +1,5 @@
 
-<o-form ignore-default-navigation="yes" show-header="false">
+<o-form ignore-default-navigation="yes" show-header="false" style="max-height: inherit;">
 <div>
   <div class="landing-page-title-container" fxLayout="column">
     <h1 class="title_text">{{ 'OUR_SERVICES' | oTranslate }}:</h1>
@@ -8,16 +8,16 @@
   <o-grid #serviceGrid attr="serviceGrid" service="services" entity="service" keys="id_service"
     columns="id_service;icon;name;price;fidelity_points;duration_time;legality_status;magic_status;efficiency_percentage;success_percentage;bonus;description"
     title="{{'OUR_SERVICES' | oTranslate}}" grid-item-height="345px"
-    col="12" show-page-size="false" orderable="false" quick-filter="true" search="yes" show-footer="true" pageable="no"
+    col="12" show-page-size="false" orderable="false" quick-filter="true" search="yes" show-footer="false" pageable="no"
     controls="false" gutter-size="1px" detail-mode="none" fill="outline" justify-content="flex-end"
     >
     <ng-container *ngFor="let list of serviceGrid.dataArray">
       <ng-container *ngIf="list.name != null">
         <o-grid-item >
           <!-- *ngIf="list.name == 'Sobornar'" -->
-          
+
           <div id="Servicios" (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="o-card-menu-item mat-elevation-z1 servicio">
-          
+
           <o-image enabled="no" autofit="yes" id='icon' data ="{{list.icon}}" label="{{'ICON' | oTranslate}}" show-controls="no"
              empty-image="assets/images/no-image.png" width="300px"> </o-image>
           <span class="Titulos"><b>{{ list.name }} </b></span>
@@ -27,10 +27,9 @@
         </o-grid-item>
       </ng-container>
     </ng-container>
-   
+
   </o-grid>
-  
-  <div style="height:100px"><span></span></div>
+
   <!--
   <mat-card style="width:250px;height:250px">
     <mat-card-header>

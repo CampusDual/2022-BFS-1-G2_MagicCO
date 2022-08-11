@@ -18,7 +18,7 @@
   height: 100%;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
 
   .landing-page-outer-container {
     width: 100%;
@@ -114,8 +114,16 @@
 
   }
 
+  .header-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+
   .footer-container {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
