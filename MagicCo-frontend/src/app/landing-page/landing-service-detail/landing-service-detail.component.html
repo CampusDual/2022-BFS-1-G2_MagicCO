@@ -1,7 +1,7 @@
 <mat-dialog-content>
 <div fxLayout="column"  class="service-detail"  fxFill>
 
- 
+
      <div class="prueba" >
         <div class="divservicio">
         <o-image  id='icon' data ={{data.icon}} label="{{'ICON' | oTranslate}}" show-controls="no"
@@ -10,8 +10,8 @@
         <div class=contenidoservicio>
           <h2 style="margin-left:15px;font-size:125%;"><b>{{ data.name }} - {{ data.price }}€</b></h2>
           <h6 style="margin-left:15px;line-height:20px;margin-top:-20px;">{{data.description}}</h6>
-          <p class="pservicios">Duration: {{data.duration_time}} día/s</p>     
-          <p class="pservicios">Fidelity Points: {{ data.fidelity_points }}</p>      
+          <p class="pservicios">Duration: {{data.duration_time}} día/s</p>
+          <p class="pservicios">Fidelity Points: {{ data.fidelity_points }}</p>
           <p class="pservicios">Legality: {{ data.legality_status }} </p>
           <p class="pservicios">Magic Status: {{data.magic_status}} </p>
           <p class="pservicios">Eficiency: {{data.Efficiency_percentage}}</p>

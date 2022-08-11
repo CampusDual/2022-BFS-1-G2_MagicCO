@@ -4,8 +4,8 @@
       columns="name;region;id_review;review_text;stars;id_shop;review_date;id_client;client_name;client_email;review_title;review_id_shop"
       col="12" show-page-size="false" orderable="false" quick-filter="true" search="yes" show-footer="true" pageable="no"
       controls="false" gutter-size="1px" detail-mode="none" fill="outline" justify-content="flex-end">
-      <o-button (click)="ngAfterViewInit()" label="Filtrar por id_shop" layout-padding color="accent"></o-button>
-      <o-button (click)="getScoreAvgReviews()" label="Average" layout-padding color="accent"></o-button>
+      <!--<o-button (click)="ngAfterViewInit()" label="Filtrar por id_shop" layout-padding color="accent"></o-button>
+      <o-button (click)="getScoreAvgReviews()" label="Average" layout-padding color="accent"></o-button>-->
 
       <mat-card *ngFor="let review of reviewGrid.dataArray; trackBy:trackByIndex">
         <div fxLayout="row" fxLayoutAlign="center center" id="ReviewCard" servicio>

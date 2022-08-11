@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit {
     this.service.insert(data,'user')
     .subscribe(resp => {
       if (resp.code === 0) {
+        localStorage.clear();
         this.addUserRole();
         this.router.navigate(['../../', 'main']);
         // resp.data contains the data retrieved from the server

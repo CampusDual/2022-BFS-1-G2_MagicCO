@@ -19,6 +19,8 @@ export class ShopsDetailsComponent implements OnInit {
 
   public currentItem;
 
+  @ViewChild('shopSubscriptionTable', { static: false })
+    private shopSubscription: OTableComponent;
 
   @ViewChild('idShop', { static: false })
   public idShop: OTextInputComponent;
