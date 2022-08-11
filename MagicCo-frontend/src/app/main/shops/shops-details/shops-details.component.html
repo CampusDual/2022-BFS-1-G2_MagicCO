@@ -1,7 +1,7 @@
 <o-form #shopDetailsForm service="shops" entity="shop" keys="id_shop" header-actions="R;I;U;D" show-header-navigation="no" fxFill
 >
-  <o-button (click)="ngAfterViewInit()" label="Mandar id_shop a review component" layout-padding color="warn"></o-button>
-  <o-row-collapsible expanded="yes" title="{{'SHOP_NAME'| oTranslate}}: {{currentShopName}}, id: {{currentItem}}" appearance='outline'>
+  <!--<o-button (click)="ngAfterViewInit()" label="Mandar id_shop a review component" layout-padding color="warn"></o-button>-->
+  <!--<o-row-collapsible expanded="yes" title="{{'SHOP_NAME'| oTranslate}}: {{currentShopName}}, id: {{currentItem}}" appearance='outline'>-->
       <o-column fxFlex="70" fxLayoutAlign="center center" fxLayoutGap="10px">
         <o-row >
           <o-text-input #idShop attr="id_shop" sql-type="INTEGER" enabled="no" ></o-text-input>
@@ -22,7 +22,6 @@
       <o-column fxFlex>
         <o-textarea-input attr="description" label="{{'DESCRIPTION' | oTranslate}}" fxFlex></o-textarea-input>
       </o-column>
-    </o-row-collapsible>
   <mat-tab-group  fxFlex>
     <mat-tab label="{{ 'SUBSCRIPTIONS' | oTranslate }}">
       <div layout-padding>
@@ -43,20 +42,10 @@
     </div>
     </mat-tab>
     <mat-tab label="{{ 'SERVICES' | oTranslate }}">
-      <o-column fxFlex layout-padding>
-        <o-row>
-        </o-row>
-        <o-row>
-        </o-row>
-        <o-row>
-        </o-row>
-        <o-row>
-        </o-row>
-        <o-row>
-        </o-row>
-        <o-row>
-        </o-row>
-      </o-column>
+      <o-table insert-button="no" refresh-button="no" detail-mode="none" delete-button="no" >
+        <o-table-column attr="Servicios disponibles" ></o-table-column>
+        <o-row></o-row>
+      </o-table>
     </mat-tab>
     <mat-tab label="{{ 'REVIEWS' | oTranslate }}">
       <app-shop-reviews [item]="currentItem"></app-shop-reviews>
